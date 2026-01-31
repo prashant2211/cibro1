@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Registration Form</title>
+    <style>
+        @media print {
+            body { 
+                margin: 0; 
+                padding: 0;
+                background: white;
+            }
+            .no-print { display: none; }
+            @page { 
+                margin: 0.3cm;
+                size: A4;
+            }
+            .form-container {
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 5mm !important;
+                margin: 0 !important;
+                border: 2px solid #dc2626 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                box-sizing: border-box !important;
+            }
+            .header-section {
+                padding: 4px !important;
+                margin-bottom: 5px !important;
+                page-break-inside: avoid;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .header-top {
+                margin-bottom: 3px !important;
+                padding-bottom: 3px !important;
+            }
+            .foundation-name-top {
+                font-size: 10px !important;
+            }
+            .header-main {
+                gap: 5px !important;
+                margin-top: 3px !important;
+            }
+            .logo-img {
+                width: 35px !important;
+                height: 35px !important;
+            }
+            .title-pragati {
+                font-size: 16px !important;
+            }
+            .title-kendra {
+                font-size: 9px !important;
+            }
+            div[style*="GROUP REGISTRATION"] {
+                font-size: 11px !important;
+                padding: 4px !important;
+            }
+            .form-fields {
+                padding: 8px !important;
+                margin: 8px 0 !important;
+                page-break-inside: avoid;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .field-row {
+                padding: 4px !important;
+                margin-bottom: 6px !important;
+            }
+            .field-label {
+                font-size: 11px !important;
+                margin-right: 5px !important;
+            }
+            .field-line,
+            .field-line-long {
+                margin: 0 5px !important;
+                min-width: 60px !important;
+                max-width: 100% !important;
+            }
+            .field-row {
+                max-width: 100% !important;
+                overflow: hidden !important;
+            }
+            * {
+                max-width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .member-table {
+                font-size: 8px !important;
+                page-break-inside: avoid;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin-top: 8px !important;
+            }
+            .member-table th,
+            .member-table td {
+                padding: 3px 2px !important;
+                font-size: 8px !important;
+                height: 20px !important;
+            }
+            .member-table td input {
+                font-size: 8px !important;
+            }
+            .member-table th:first-child,
+            .member-table td:first-child {
+                width: 7% !important;
+                max-width: 7% !important;
+            }
+            .member-table th:nth-child(2),
+            .member-table th:nth-child(3),
+            .member-table td:nth-child(2),
+            .member-table td:nth-child(3) {
+                width: 20% !important;
+                max-width: 20% !important;
+            }
+            .member-table th:nth-child(4),
+            .member-table td:nth-child(4) {
+                width: 12% !important;
+                max-width: 12% !important;
+            }
+            .member-table th:last-child,
+            .member-table td:last-child {
+                width: 23% !important;
+                max-width: 23% !important;
+            }
+            .declaration-text {
+                padding: 8px !important;
+                font-size: 9px !important;
+                margin-top: 8px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .signature-section {
+                page-break-inside: avoid;
+                margin-top: 6px !important;
+                padding: 4px !important;
+                gap: 4px !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+            .signature-box {
+                padding: 3px !important;
+                min-height: 45px !important;
+            }
+            .signature-box div {
+                margin-top: 20px !important;
+                min-height: 25px !important;
+                font-size: 8px !important;
+                padding-top: 1px !important;
+            }
+            .signature-box div div {
+                font-size: 8px !important;
+                margin-bottom: 2px !important;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 12px;
+            line-height: 1.6;
+            color: #1f2937;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .form-container {
+            max-width: 210mm;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            padding: 10mm;
+            border: 3px solid #dc2626;
+            box-shadow: 0 10px 40px rgba(220, 38, 38, 0.2), 0 0 0 1px rgba(0,0,0,0.05);
+            border-radius: 6px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        .header-section {
+            border: 2px solid #dc2626;
+            padding: 6px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fef2f2 0%, #ffffff 50%, #fef2f2 100%);
+            border-radius: 4px;
+            box-shadow: 0 1px 4px rgba(220, 38, 38, 0.1);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .header-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #dc2626, #b91c1c, #dc2626);
+        }
+        
+        .header-top {
+            text-align: center;
+            margin-bottom: 4px;
+            padding-bottom: 4px;
+            border-bottom: 1.5px solid #dc2626;
+            position: relative;
+        }
+        
+        .foundation-name-top {
+            font-size: 11px;
+            font-weight: 700;
+            color: #dc2626;
+            text-decoration: underline;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+        
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 4px;
+            position: relative;
+            gap: 8px;
+        }
+        
+        .logo-left {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #dc2626;
+            box-shadow: 0 2px 6px rgba(220, 38, 38, 0.2);
+        }
+        
+        .title-center {
+            flex: 1;
+            text-align: center;
+            padding-left: 5px;
+        }
+        
+        .title-pragati {
+            font-size: 20px;
+            font-weight: 800;
+            color: #dc2626;
+            text-decoration: underline;
+            margin-bottom: 2px;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+        
+        .title-kendra {
+            font-size: 11px;
+            font-weight: 700;
+            color: #dc2626;
+            text-decoration: underline;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+        }
+        
+        .form-fields {
+            margin: 8px 0;
+            border: 2px solid #dc2626;
+            padding: 8px;
+            border-radius: 4px;
+            background: linear-gradient(to bottom, #fef2f2, #ffffff);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .field-row {
+            display: flex;
+            margin-bottom: 6px;
+            align-items: baseline;
+            padding: 4px;
+            background: white;
+            border-radius: 3px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            flex-wrap: wrap;
+        }
+        
+        .field-row:hover {
+            border-color: #dc2626;
+            box-shadow: 0 4px 10px rgba(220, 38, 38, 0.1);
+            transform: translateY(-1px);
+        }
+        
+        .field-label {
+            font-size: 11px;
+            white-space: nowrap;
+            margin-right: 6px;
+            font-weight: 700;
+            color: #374151;
+            flex-shrink: 0;
+        }
+        
+        .field-line {
+            flex: 1;
+            border-bottom: 1.5px dotted #dc2626;
+            min-width: 70px;
+            margin: 0 6px;
+            height: 18px;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+            max-width: 150px;
+        }
+        
+        .field-line input {
+            width: 100%;
+            max-width: 100%;
+            border: none;
+            border-bottom: 1.5px dotted #dc2626;
+            background: transparent;
+            font-size: 11px;
+            padding: 1px 0;
+            height: 18px;
+            outline: none;
+            color: #1f2937;
+            font-weight: 500;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        .field-line input:focus {
+            border-bottom: 1.5px solid #dc2626;
+        }
+        
+        .field-line-long {
+            flex: 2;
+            border-bottom: 1.5px dotted #dc2626;
+            min-width: 100px;
+            max-width: 250px;
+            margin: 0 6px;
+            height: 18px;
+            position: relative;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        
+        .field-line-long input {
+            width: 100%;
+            max-width: 100%;
+            border: none;
+            border-bottom: 1.5px dotted #dc2626;
+            background: transparent;
+            font-size: 11px;
+            padding: 1px 0;
+            height: 18px;
+            outline: none;
+            color: #1f2937;
+            font-weight: 500;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        .field-line-long input:focus {
+            border-bottom: 1.5px solid #dc2626;
+        }
+        
+        .member-table {
+            width: 100%;
+            max-width: 100%;
+            border-collapse: collapse;
+            margin-top: 8px;
+            font-size: 9px;
+            border: 2px solid #dc2626;
+            box-shadow: 0 1px 4px rgba(220, 38, 38, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            table-layout: fixed;
+            box-sizing: border-box;
+        }
+        
+        .member-table th {
+            border: 1px solid #b91c1c;
+            padding: 6px 3px;
+            text-align: center;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.2px;
+            word-wrap: break-word;
+            overflow: hidden;
+        }
+        
+        .member-table td {
+            border: 1px solid #e5e7eb;
+            padding: 4px 3px;
+            text-align: center;
+            height: 25px;
+            background: white;
+            transition: background-color 0.2s ease;
+            word-wrap: break-word;
+            overflow: hidden;
+        }
+        
+        .member-table tr:nth-child(even) td {
+            background: #f9fafb;
+        }
+        
+        .member-table tr:hover td {
+            background: #fef2f2;
+            border-color: #fecaca;
+        }
+        
+        .member-table td input {
+            width: 100%;
+            border: none;
+            background: transparent;
+            font-size: 9px;
+            text-align: center;
+            outline: none;
+            color: #1f2937;
+            font-weight: 500;
+            padding: 1px;
+        }
+        
+        .member-table td input:focus {
+            background: #fff;
+            box-shadow: 0 0 0 1px rgba(220, 38, 38, 0.2);
+            border-radius: 2px;
+        }
+        
+        .declaration-text {
+            margin-top: 8px;
+            font-size: 9px;
+            line-height: 1.4;
+            padding: 6px;
+            border: 1.5px solid #dc2626;
+            border-radius: 3px;
+            background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+            box-shadow: 0 1px 4px rgba(220, 38, 38, 0.1);
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .declaration-text p {
+            color: #374151;
+            font-weight: 500;
+            margin: 0;
+        }
+        
+        .field-line-inline {
+            display: inline-block;
+            border-bottom: 1px dotted #000;
+            margin: 0 2px;
+            vertical-align: baseline;
+        }
+        
+        .field-line-inline input {
+            border: none;
+            border-bottom: 1px dotted #000;
+            background: transparent;
+            font-size: 9px;
+            padding: 0 2px;
+            outline: none;
+            text-align: center;
+            width: 70px;
+        }
+        
+        .signature-section {
+            margin-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            gap: 10px;
+            padding: 12px;
+            border: 2px solid #dc2626;
+            border-radius: 4px;
+            background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.1);
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .signature-box {
+            flex: 1;
+            text-align: center;
+            padding: 8px;
+            background: white;
+            border-radius: 4px;
+            border: 1.5px solid #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .signature-box:hover {
+            border-color: #dc2626;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.15);
+            transform: translateY(-1px);
+        }
+        
+        .signature-box > div {
+            width: 100%;
+        }
+        
+        .member-table th:first-child,
+        .member-table td:first-child {
+            width: 8%;
+        }
+        
+        .member-table th:nth-child(2),
+        .member-table th:nth-child(3),
+        .member-table td:nth-child(2),
+        .member-table td:nth-child(3) {
+            width: 22%;
+        }
+        
+        .member-table th:nth-child(4),
+        .member-table td:nth-child(4) {
+            width: 13%;
+        }
+        
+        .member-table th:last-child,
+        .member-table td:last-child {
+            width: 25%;
+        }
+        
+        .serial-number {
+            font-weight: bold;
+        }
+        
+        .print-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            z-index: 1000;
+            box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .print-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.5);
+        }
+        
+        .print-button:active {
+            transform: translateY(-1px);
+        }
+        
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="header-section">
+            <div class="header-top">
+                <div class="foundation-name-top">JAAGAT JANNI MAHILA BIKASH FOUNDATION</div>
+            </div>
+            <div class="header-main">
+                <div class="logo-left">
+                    <img src="Logo.jpeg" alt="Foundation Logo" class="logo-img" onerror="this.style.display='none'">
+                </div>
+                <div class="title-center">
+                    <div class="title-pragati">PRAGATI</div>
+                    <div class="title-kendra">MAHILA VIKASH KENDRA</div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="border: 1.5px solid #dc2626; padding: 6px; margin-bottom: 8px; border-radius: 4px; background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%); box-shadow: 0 1px 4px rgba(220, 38, 38, 0.2);">
+            <div style="font-size: 13px; font-weight: 700; color: white; text-align: center; letter-spacing: 0.5px; text-transform: uppercase; text-shadow: 1px 1px 2px rgba(0,0,0,0.3);">GROUP REGISTRATION FORM / समूह पंजीकरण फॉर्म</div>
+        </div>
+        
+        <form>
+            <div class="form-fields">
+                <div class="field-row">
+                    <span class="field-label">समूह का नाम...</span>
+                    <span class="field-line-long"><input type="text" name="groupName"></span>
+                    <span class="field-label">...दिनांक...</span>
+                    <span class="field-line"><input type="date" name="date"></span>
+                </div>
+                
+                <div class="field-row">
+                    <span class="field-label">गांव का नाम...</span>
+                    <span class="field-line-long"><input type="text" name="villageName"></span>
+                    <span class="field-label">...पंचायत का नाम...</span>
+                    <span class="field-line"><input type="text" name="panchayatName"></span>
+                </div>
+                
+                <div class="field-row">
+                    <span class="field-label">वार्ड...</span>
+                    <span class="field-line"><input type="text" name="ward"></span>
+                    <span class="field-label">...प्रखंड...</span>
+                    <span class="field-line"><input type="text" name="block"></span>
+                    <span class="field-label">...जिला...</span>
+                    <span class="field-line"><input type="text" name="district"></span>
+                </div>
+                
+                <div class="field-row">
+                    <span class="field-label">सचिव...</span>
+                    <span class="field-line-long"><input type="text" name="secretary"></span>
+                    <span class="field-label">...कोषाध्यक्ष...</span>
+                    <span class="field-line"><input type="text" name="treasurer"></span>
+                </div>
+                
+                <div class="field-row">
+                    <span class="field-label">अध्यक्ष का नाम...</span>
+                    <span class="field-line-long"><input type="text" name="presidentName"></span>
+                </div>
+            </div>
+        </form>
+        
+        <table class="member-table">
+            <thead>
+                <tr>
+                    <th>क्रम सं</th>
+                    <th>सदस्य का नाम</th>
+                    <th>पति का नाम</th>
+                    <th>बचत</th>
+                    <th>आधार संख्या</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="serial-number">01</td>
+                    <td><input type="text" name="member1_name"></td>
+                    <td><input type="text" name="member1_husband"></td>
+                    <td><input type="text" name="member1_savings"></td>
+                    <td><input type="text" name="member1_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">02</td>
+                    <td><input type="text" name="member2_name"></td>
+                    <td><input type="text" name="member2_husband"></td>
+                    <td><input type="text" name="member2_savings"></td>
+                    <td><input type="text" name="member2_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">03</td>
+                    <td><input type="text" name="member3_name"></td>
+                    <td><input type="text" name="member3_husband"></td>
+                    <td><input type="text" name="member3_savings"></td>
+                    <td><input type="text" name="member3_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">04</td>
+                    <td><input type="text" name="member4_name"></td>
+                    <td><input type="text" name="member4_husband"></td>
+                    <td><input type="text" name="member4_savings"></td>
+                    <td><input type="text" name="member4_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">05</td>
+                    <td><input type="text" name="member5_name"></td>
+                    <td><input type="text" name="member5_husband"></td>
+                    <td><input type="text" name="member5_savings"></td>
+                    <td><input type="text" name="member5_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">06</td>
+                    <td><input type="text" name="member6_name"></td>
+                    <td><input type="text" name="member6_husband"></td>
+                    <td><input type="text" name="member6_savings"></td>
+                    <td><input type="text" name="member6_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">07</td>
+                    <td><input type="text" name="member7_name"></td>
+                    <td><input type="text" name="member7_husband"></td>
+                    <td><input type="text" name="member7_savings"></td>
+                    <td><input type="text" name="member7_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">08</td>
+                    <td><input type="text" name="member8_name"></td>
+                    <td><input type="text" name="member8_husband"></td>
+                    <td><input type="text" name="member8_savings"></td>
+                    <td><input type="text" name="member8_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">09</td>
+                    <td><input type="text" name="member9_name"></td>
+                    <td><input type="text" name="member9_husband"></td>
+                    <td><input type="text" name="member9_savings"></td>
+                    <td><input type="text" name="member9_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">10</td>
+                    <td><input type="text" name="member10_name"></td>
+                    <td><input type="text" name="member10_husband"></td>
+                    <td><input type="text" name="member10_savings"></td>
+                    <td><input type="text" name="member10_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">11</td>
+                    <td><input type="text" name="member11_name"></td>
+                    <td><input type="text" name="member11_husband"></td>
+                    <td><input type="text" name="member11_savings"></td>
+                    <td><input type="text" name="member11_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">12</td>
+                    <td><input type="text" name="member12_name"></td>
+                    <td><input type="text" name="member12_husband"></td>
+                    <td><input type="text" name="member12_savings"></td>
+                    <td><input type="text" name="member12_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">13</td>
+                    <td><input type="text" name="member13_name"></td>
+                    <td><input type="text" name="member13_husband"></td>
+                    <td><input type="text" name="member13_savings"></td>
+                    <td><input type="text" name="member13_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">14</td>
+                    <td><input type="text" name="member14_name"></td>
+                    <td><input type="text" name="member14_husband"></td>
+                    <td><input type="text" name="member14_savings"></td>
+                    <td><input type="text" name="member14_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">15</td>
+                    <td><input type="text" name="member15_name"></td>
+                    <td><input type="text" name="member15_husband"></td>
+                    <td><input type="text" name="member15_savings"></td>
+                    <td><input type="text" name="member15_aadhaar"></td>
+                </tr>
+                <tr>
+                    <td class="serial-number">16</td>
+                    <td><input type="text" name="member16_name"></td>
+                    <td><input type="text" name="member16_husband"></td>
+                    <td><input type="text" name="member16_savings"></td>
+                    <td><input type="text" name="member16_aadhaar"></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="declaration-text">
+            <p>आज दिनांक<span class="field-line-inline"><input type="date" name="formation_date"></span>को<span class="field-line-inline"><input type="text" name="formation_location"></span>समूह का गठन किया गया जिसमें कुल सदस्यों की सं<span class="field-line-inline"><input type="number" name="total_members_count" style="width: 50px;"></span>है। इस समूह का कुल बचत<span class="field-line-inline"><input type="text" name="total_savings" style="width: 70px;"></span>हुआ।</p>
+        </div>
+        
+        <div class="signature-section">
+            <div class="signature-box">
+                <div style="border-top: 2px solid #dc2626; padding-top: 8px; margin-top: 60px; min-height: 70px;">
+                    <div style="font-weight: 600; color: #374151; margin-bottom: 15px;">कोषाध्यक्ष का हस्ताक्षर</div>
+                    <div style="border-top: 2px solid #dc2626; padding-top: 8px; margin-bottom: 8px; font-size: 11px; font-weight: 600;">C.M. Signature</div>
+                    <div style="font-size: 11px; font-weight: 600;">Mob.: <span style="border-bottom: 1px dotted #000; display: inline-block; min-width: 100px; margin-left: 5px;"><input type="tel" name="cm_mobile" style="border: none; width: 100px; text-align: center; background: transparent;"></span></div>
+                </div>
+            </div>
+            <div class="signature-box">
+                <div style="border-top: 2px solid #dc2626; padding-top: 8px; margin-top: 60px; min-height: 70px;">
+                    <div style="font-weight: 600; color: #374151;">अध्यक्ष का हस्ताक्षर</div>
+                </div>
+            </div>
+            <div class="signature-box">
+                <div style="border-top: 2px solid #dc2626; padding-top: 8px; margin-top: 60px; min-height: 70px;">
+                    <div style="font-weight: 600; color: #374151;">सचिव</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="print-button no-print" onclick="window.print()">Print / Save as PDF</button>
+</body>
+</html>
