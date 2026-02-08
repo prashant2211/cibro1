@@ -13,7 +13,7 @@ const Services = () => {
       <SEO 
         title="Services"
         description="Jaagat Janni Mahila Vikash Foundation - Self-Help Group Services, Loans, Training Programs"
-        keywords="self-help group, SHG, loan schemes, women empowerment, savings scheme, training programs"
+        keywords="self-help group, SHG, loan schemes, women empowerment, savings scheme, training programs, Jaagat Janni Mahila Vikash Foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Mahila Bikas Foundation, mahila Bikas foundation, mahila bikas foundation"
       />
       <div className="pt-20">
         {/* Hero Section */}

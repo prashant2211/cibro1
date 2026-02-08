@@ -29,6 +29,12 @@ const Contact = () => {
   };
 
   return (
+    <>
+      <SEO 
+        title="Contact Us - Jaagat Janni Mahila Vikash Foundation | Patna & Muzaffarpur"
+        description="Contact Jaagat Janni Mahila Vikash Foundation (Pragati Mahila Vikash Kendra) - Patna Office: Ghurdaur Road, Digha Ashiana, Near SSB Camp, Patna-800011. Muzaffarpur Office: Maa Complex, Behind SBI, Bhagwanpur Chowk, Sri Rampuri. Phone: +91 95258 68575, +91 82102 89314"
+        keywords="Jaagat Janni Mahila Vikash Foundation contact, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Pragati Mahila Vikash Kendra address, Pragati Mahila Vikas Kendra, Pragati Mahila Bikas Kendra, महिला विकास फाउंडेशन पटना, mahila vikas foundation, mahila vikash foundation, mahila bikas foundation, mahila Bikas foundation, Mahila Bikas Foundation, women foundation contact Patna, Muzaffarpur women NGO contact"
+      />
     <div className="pt-20">
       {/* Hero Image Section */}
       <section className="relative py-0 bg-white">

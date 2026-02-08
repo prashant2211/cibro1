@@ -13,7 +13,7 @@ const About = () => {
       <SEO 
         title="About Us - Jaagat Janni Mahila Vikash Foundation | Pragati Mahila Vikash Kendra"
         description="Learn about Jaagat Janni Mahila Vikash Foundation (Pragati Mahila Vikash Kendra) - Established in 2024, working for women's self-help groups, empowerment, and development in Patna and Muzaffarpur, Bihar. Contact: +91 95258 68575, +91 82102 89314"
-        keywords="Jaagat Janni Mahila Vikash Foundation about, Pragati Mahila Vikash Kendra, महिला विकास फाउंडेशन, women self-help groups Patna, महिला समूह पटना, Bihar women NGO, women empowerment organization"
+        keywords="Jaagat Janni Mahila Vikash Foundation about, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Pragati Mahila Vikash Kendra, Pragati Mahila Vikas Kendra, Pragati Mahila Bikas Kendra, महिला विकास फाउंडेशन, mahila vikas foundation, mahila vikash foundation, mahila bikas foundation, mahila Bikas foundation, Mahila Bikas Foundation, women self-help groups Patna, महिला समूह पटना, Bihar women NGO, women empowerment organization"
       />
     <div className="pt-20">
       {/* Hero Image Section */}
