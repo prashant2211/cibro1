@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
 import { FiMapPin, FiPhone, FiMail, FiSend } from 'react-icons/fi';
+import SEO from '../components/SEO';
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -117,8 +118,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-xl mb-2 text-gray-900">{t.contact.email}</h3>
-                    <a href="mailto:info@mahilavikashfoundation.org" className="text-gray-700 text-lg hover:text-primary-600 transition-colors break-all">
-                      info@mahilavikashfoundation.org
+                    <a href="mailto:info@jjmvikashfoundation.com" className="text-gray-700 text-lg hover:text-primary-600 transition-colors break-all">
+                      info@jjmvikashfoundation.com
                     </a>
                   </div>
                 </div>
@@ -200,6 +201,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

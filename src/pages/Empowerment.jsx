@@ -4,12 +4,19 @@ import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
 import { services } from '../data/services';
 import { FiUsers, FiDollarSign, FiAward, FiTarget, FiArrowRight } from 'react-icons/fi';
+import SEO from '../components/SEO';
 
 const Empowerment = () => {
   const { language } = useLanguage();
   const t = translations[language];
 
   return (
+    <>
+      <SEO 
+        title="Women Empowerment - Self-Help Group Services | Jaagat Janni Mahila Vikash Foundation"
+        description="Women Empowerment programs by Jaagat Janni Mahila Vikash Foundation - Complete self-help group services including SHG formation, savings schemes, loan schemes, training programs for women in Patna and Muzaffarpur, Bihar"
+        keywords="women empowerment Patna, महिला सशक्तिकरण, self-help group services, SHG formation, women development Bihar, महिला समूह सेवाएं"
+      />
     <div className="pt-20">
       {/* Hero Image Section */}
       <section className="relative py-0 bg-white">
@@ -204,6 +211,7 @@ const Empowerment = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

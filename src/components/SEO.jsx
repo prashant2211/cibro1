@@ -37,6 +37,24 @@ const SEO = ({ title, description, keywords }) => {
     if (ogUrl) {
       ogUrl.setAttribute('content', window.location.href);
     }
+
+    // Update canonical URL
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', window.location.href);
+
+    // Update og:image with full URL
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    if (ogImage) {
+      const imageSrc = ogImage.getAttribute('content');
+      if (imageSrc && !imageSrc.startsWith('http')) {
+        ogImage.setAttribute('content', `${window.location.origin}${imageSrc}`);
+      }
+    }
   }, [location, title, description, keywords]);
 
   return null;

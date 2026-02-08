@@ -2,12 +2,19 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
 import { FiMapPin, FiCalendar, FiUsers, FiTarget, FiPhone, FiAward, FiShield, FiHome, FiLock } from 'react-icons/fi';
+import SEO from '../components/SEO';
 
 const About = () => {
   const { language } = useLanguage();
   const t = translations[language];
 
   return (
+    <>
+      <SEO 
+        title="About Us - Jaagat Janni Mahila Vikash Foundation | Pragati Mahila Vikash Kendra"
+        description="Learn about Jaagat Janni Mahila Vikash Foundation (Pragati Mahila Vikash Kendra) - Established in 2024, working for women's self-help groups, empowerment, and development in Patna and Muzaffarpur, Bihar. Contact: +91 95258 68575, +91 82102 89314"
+        keywords="Jaagat Janni Mahila Vikash Foundation about, Pragati Mahila Vikash Kendra, महिला विकास फाउंडेशन, women self-help groups Patna, महिला समूह पटना, Bihar women NGO, women empowerment organization"
+      />
     <div className="pt-20">
       {/* Hero Image Section */}
       <section className="relative py-0 bg-white">
@@ -453,6 +460,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
