@@ -11,9 +11,9 @@ const About = () => {
   return (
     <>
       <SEO 
-        title="About Us - Jaagat Janni Mahila Vikash Foundation | Pragati Mahila Vikash Kendra"
-        description="Learn about Jaagat Janni Mahila Vikash Foundation (Pragati Mahila Vikash Kendra) - Established in 2024, working for women's self-help groups, empowerment, and development in Patna and Muzaffarpur, Bihar. Contact: +91 95258 68575, +91 82102 89314"
-        keywords="Jaagat Janni Mahila Vikash Foundation about, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Pragati Mahila Vikash Kendra, Pragati Mahila Vikas Kendra, Pragati Mahila Bikas Kendra, महिला विकास फाउंडेशन, mahila vikas foundation, mahila vikash foundation, mahila bikas foundation, mahila Bikas foundation, Mahila Bikas Foundation, women self-help groups Patna, महिला समूह पटना, Bihar women NGO, women empowerment organization"
+        title="About Us - Mahila Bikash Foundation | Women Empowerment Patna"
+        description="About Mahila Bikash Foundation - Women empowerment, self-help groups in Patna & Muzaffarpur, Bihar. Contact: +91 95258 68575"
+        keywords="mahila bikash foundation, Mahila Bikash Foundation, mahila bikash foundation Patna, mahila bikash foundation Bihar, Pragati Bikash Foundation, pragati bikash foundation, Pragati Bikash Foundation Patna, Pragati Mahila Vikas Foundation, Pragati Mahila Bikash Foundation, pragati mahila vikas foundation, pragati mahila bikash foundation, Pragati Mahila Vikas Foundation Patna, Pragati Mahila Bikash Foundation Patna, Pragati Mahila Vikas Kendra, Pragati Mahila Bikash Kendra, Jaagat Janni Mahila Bikash Foundation about, Jagat Janni Mahila Bikash Foundation, Jagat Ganni Mahila Bikash Foundation, Jaagat Ganni Mahila Bikash Foundation, jagat ganni mahila bikash foundation, jagat janni mahila bikash foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Pragati Mahila Bikas Kendra, महिला विकास फाउंडेशन, mahila vikas foundation, mahila bikas foundation, mahila Bikas foundation, Mahila Bikas Foundation, women self-help groups Patna, महिला समूह पटना, Bihar women NGO, women empowerment organization"
       />
     <div className="pt-20">
       {/* Hero Image Section */}
@@ -32,6 +32,15 @@ const About = () => {
       <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
+            {/* H1 Heading for SEO */}
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 text-center hindi-text">
+              {language === 'hindi' ? 'जागत जननी महिला विकास फाउंडेशन - हमारे बारे में' : 'About Mahila Bikash Foundation - Women Empowerment Organization'}
+            </h1>
+            <p className="text-xl text-gray-700 mb-12 text-center leading-relaxed max-w-3xl mx-auto">
+              {language === 'hindi' 
+                ? '2024 में स्थापित, जागत जननी महिला विकास फाउंडेशन (प्रगति महिला विकास केंद्र) बिहार के पटना और मुजफ्फरपुर में महिलाओं के सशक्तिकरण के लिए समर्पित है। हम महिलाओं को आर्थिक रूप से स्वतंत्र बनाने और उन्हें विभिन्न वित्तीय सेवाओं तक पहुंच प्रदान करने के लिए काम करते हैं।'
+                : 'Established in 2024, Jaagat Janni Mahila Bikash Foundation (Pragati Mahila Bikash Kendra) is dedicated to empowering women in Patna and Muzaffarpur, Bihar. We work to make women economically independent and provide them access to various financial services.'}
+            </p>
             {/* Story Section with Image */}
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <div className="order-2 md:order-1">
@@ -51,7 +60,7 @@ const About = () => {
                 <p className="text-lg text-gray-700 mb-4 leading-relaxed">
                   {language === 'hindi' 
                     ? 'जागत जननी महिला विकास फाउंडेशन (प्रगति महिला विकास केंद्र) महिलाओं के स्वयं सहायता समूह (महिला समूह) बनाने और उन्हें सशक्त बनाने के लिए समर्पित है। हमारा मुख्य उद्देश्य महिलाओं को आर्थिक रूप से स्वतंत्र बनाना और उन्हें विभिन्न वित्तीय सेवाओं तक पहुंच प्रदान करना है।'
-                    : 'Jaagat Janni Mahila Vikash Foundation (Pragati Mahila Vikash Kendra) is dedicated to forming women\'s self-help groups (mahila samooh) and empowering them. Our main objective is to make women economically independent and provide them access to various financial services.'}
+                    : 'Jaagat Janni Mahila Bikash Foundation (Pragati Mahila Bikash Kendra) is dedicated to forming women\'s self-help groups (mahila samooh) and empowering them. Our main objective is to make women economically independent and provide them access to various financial services.'}
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   {language === 'hindi' 

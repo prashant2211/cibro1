@@ -13,8 +13,8 @@ const Empowerment = () => {
   return (
     <>
       <SEO 
-        title="Women Empowerment - Self-Help Group Services | Jaagat Janni Mahila Vikash Foundation"
-        description="Women Empowerment programs by Jaagat Janni Mahila Vikash Foundation - Complete self-help group services including SHG formation, savings schemes, loan schemes, training programs for women in Patna and Muzaffarpur, Bihar"
+        title="Women Empowerment - Mahila Bikash Foundation | Self-Help Groups Patna"
+        description="Women Empowerment programs - Self-help groups, loans, training for women in Patna & Muzaffarpur, Bihar"
         keywords="women empowerment Patna, महिला सशक्तिकरण, self-help group services, SHG formation, women development Bihar, महिला समूह सेवाएं"
       />
     <div className="pt-20">
@@ -27,6 +27,31 @@ const Empowerment = () => {
             className="w-full h-full object-cover object-center"
             onError={(e) => { e.target.style.display = 'none'; }}
           />
+        </div>
+      </section>
+
+      {/* H1 Heading for SEO */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 hindi-text">
+              {language === 'hindi' ? 'महिला सशक्तिकरण - स्वयं सहायता समूह सेवाएं' : 'Women Empowerment - Self-Help Group Services'}
+            </h1>
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              {language === 'hindi' 
+                ? 'जागत जननी महिला विकास फाउंडेशन महिलाओं के सशक्तिकरण के लिए व्यापक सेवाएं प्रदान करता है। हम स्वयं सहायता समूह बनाने, ऋण योजनाएं, बचत योजनाएं, और प्रशिक्षण कार्यक्रम प्रदान करते हैं।'
+                : 'Jaagat Janni Mahila Bikash Foundation provides comprehensive services for women empowerment. We offer self-help group formation, loan schemes, savings schemes, and training programs.'}
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center text-sm">
+              <a href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">
+                {language === 'hindi' ? 'भारत सरकार' : 'Government of India'}
+              </a>
+              <span className="text-gray-400">|</span>
+              <a href="https://wcd.nic.in/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:underline">
+                {language === 'hindi' ? 'महिला एवं बाल विकास मंत्रालय' : 'Ministry of Women & Child Development'}
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 

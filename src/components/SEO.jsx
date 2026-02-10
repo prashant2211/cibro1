@@ -7,7 +7,7 @@ const SEO = ({ title, description, keywords }) => {
   useEffect(() => {
     // Update document title
     if (title) {
-      document.title = `${title} | Jaagat Janni Mahila Vikash Foundation`;
+      document.title = `${title} | Jaagat Janni Mahila Bikash Foundation`;
     }
 
     // Update meta description

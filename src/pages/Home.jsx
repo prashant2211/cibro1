@@ -13,9 +13,9 @@ const Home = () => {
   return (
     <>
       <SEO 
-        title="Jaagat Janni Mahila Vikash Foundation | Pragati Mahila Vikash Kendra - Women Empowerment Patna"
-        description="Jaagat Janni Mahila Vikash Foundation (Pragati Mahila Vikash Kendra) - Self-help group services, loans, savings schemes, training programs for women empowerment in Patna and Muzaffarpur, Bihar. Contact: +91 95258 68575, +91 82102 89314"
-        keywords="Jaagat Janni Mahila Vikash Foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Pragati Mahila Vikash Kendra, Pragati Mahila Vikas Kendra, Pragati Mahila Bikas Kendra, महिला विकास फाउंडेशन, महिला विकास फाउंडेशन पटना, mahila vikas foundation, mahila vikash foundation, mahila bikas foundation, mahila Bikas foundation, Mahila Bikas Foundation, mahila vikas foundation Patna, mahila vikash foundation Patna, mahila bikas foundation Patna, mahila Bikas foundation Patna, self-help group Patna, women empowerment Bihar, स्वयं सहायता समूह, बचत योजना, ऋण योजना, महिला सशक्तिकरण पटना, Muzaffarpur women foundation"
+        title="Mahila Bikash Foundation | Pragati Bikash Foundation | Pragati Mahila Vikas Foundation | Pragati Mahila Bikash Foundation - Women Empowerment Patna"
+        description="Mahila Bikash Foundation - Women empowerment, self-help groups, loans, savings schemes in Patna & Muzaffarpur, Bihar. Contact: +91 95258 68575"
+        keywords="mahila bikash foundation, Mahila Bikash Foundation, mahila bikash foundation Patna, mahila bikash foundation Bihar, Pragati Bikash Foundation, pragati bikash foundation, Pragati Bikash Foundation Patna, Pragati Mahila Vikas Foundation, Pragati Mahila Bikash Foundation, pragati mahila vikas foundation, pragati mahila bikash foundation, Pragati Mahila Vikas Foundation Patna, Pragati Mahila Bikash Foundation Patna, Pragati Mahila Vikas Kendra, Pragati Mahila Bikash Kendra, Jaagat Janni Mahila Bikash Foundation, Jagat Janni Mahila Bikash Foundation, Jagat Ganni Mahila Bikash Foundation, Jaagat Ganni Mahila Bikash Foundation, jagat ganni mahila bikash foundation, jagat janni mahila bikash foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Pragati Mahila Bikas Kendra, महिला विकास फाउंडेशन, महिला विकास फाउंडेशन पटना, mahila vikas foundation, mahila bikas foundation, mahila Bikas foundation, Mahila Bikas Foundation, mahila vikas foundation Patna, mahila bikas foundation Patna, mahila Bikas foundation Patna, self-help group Patna, women empowerment Bihar, स्वयं सहायता समूह, बचत योजना, ऋण योजना, महिला सशक्तिकरण पटना, Muzaffarpur women foundation"
       />
       <div className="pt-20">
       {/* Hero Image Section */}
@@ -35,10 +35,10 @@ const Home = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center fade-in">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white hindi-text">
-                  {language === 'hindi' ? 'जागत जननी महिला विकास फाउंडेशन' : 'Jaagat Janni Mahila Vikash Foundation'}
+                  {language === 'hindi' ? 'जागत जननी महिला विकास फाउंडेशन' : 'Jaagat Janni Mahila Bikash Foundation'}
                 </h1>
                 <p className="text-xl md:text-2xl mb-2 text-white/90">
-                  Pragati Mahila Vikash Kendra
+                  Pragati Mahila Bikash Kendra
                 </p>
                 <p className="text-lg md:text-xl mb-8 text-white/90">
                   {t.home.heroDescription}
@@ -58,6 +58,59 @@ const Home = () => {
                     {t.home.learnMore}
                   </Link>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Rich Content Section */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="prose prose-lg max-w-none">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 text-center">
+                {language === 'hindi' ? 'महिला बिकास फाउंडेशन - महिला सशक्तिकरण में अग्रणी' : 'Mahila Bikash Foundation - Leading in Women Empowerment'}
+              </h2>
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed text-center">
+                {language === 'hindi' 
+                  ? 'जागत जननी महिला विकास फाउंडेशन (प्रगति महिला विकास केंद्र) बिहार के पटना और मुजफ्फरपुर में महिलाओं के सशक्तिकरण के लिए समर्पित है। हम स्वयं सहायता समूह बनाने, ऋण योजनाएं, बचत योजनाएं, और प्रशिक्षण कार्यक्रम प्रदान करते हैं।'
+                  : 'Jaagat Janni Mahila Bikash Foundation (Pragati Mahila Bikash Kendra) is dedicated to empowering women in Patna and Muzaffarpur, Bihar. We provide self-help group formation, loan schemes, savings schemes, and training programs.'}
+              </p>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 mt-8">
+                {language === 'hindi' ? 'हमारी सेवाएं' : 'Our Services'}
+              </h3>
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+                {language === 'hindi' 
+                  ? 'हम महिलाओं को आर्थिक रूप से स्वतंत्र बनाने के लिए 10 प्रमुख सेवाएं प्रदान करते हैं। इनमें स्वयं सहायता समूह बनाना, बचत योजना, ऋण योजना, गाय पालन बकरी पालन योजना, पर्सनल लोन, बिज़नेस लोन, ग्रूप लोन, लघु उद्योग ट्रेनिंग योजना, सिलाई योजना, और एजुकेशन लोन योजना शामिल हैं।'
+                  : 'We provide 10 key services to make women economically independent. These include self-help group formation, savings scheme, loan scheme, cow & goat rearing scheme, personal loan, business loan, group loan, small industry training scheme, sewing scheme, and education loan scheme.'}
+              </p>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 mt-8">
+                {language === 'hindi' ? 'हमारे बारे में' : 'About Us'}
+              </h3>
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+                {language === 'hindi' 
+                  ? '2024 में स्थापित, जागत जननी महिला विकास फाउंडेशन महिलाओं के समग्र विकास के लिए काम कर रहा है। हमारा मुख्य उद्देश्य महिलाओं को आर्थिक रूप से सशक्त बनाना और उन्हें विभिन्न वित्तीय सेवाओं तक पहुंच प्रदान करना है।'
+                  : 'Established in 2024, Jaagat Janni Mahila Bikash Foundation is working for the overall development of women. Our main objective is to economically empower women and provide them access to various financial services.'}
+              </p>
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                {language === 'hindi' 
+                  ? <>अधिक जानकारी के लिए, कृपया <Link to="/about" className="text-primary-600 hover:underline font-semibold">हमारे बारे में</Link> पृष्ठ पर जाएं या <Link to="/empowerment" className="text-primary-600 hover:underline font-semibold">महिला सशक्तिकरण</Link> पृष्ठ देखें।</>
+                  : <>For more information, please visit our <Link to="/about" className="text-primary-600 hover:underline font-semibold">About Us</Link> page or check our <Link to="/empowerment" className="text-primary-600 hover:underline font-semibold">Women Empowerment</Link> page.</>}
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center mt-8">
+                <Link to="/about" className="px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+                  {language === 'hindi' ? 'हमारे बारे में' : 'About Us'}
+                </Link>
+                <Link to="/empowerment" className="px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+                  {language === 'hindi' ? 'महिला सशक्तिकरण' : 'Women Empowerment'}
+                </Link>
+                <Link to="/services" className="px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+                  {language === 'hindi' ? 'सेवाएं' : 'Services'}
+                </Link>
+                <Link to="/contact" className="px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+                  {language === 'hindi' ? 'संपर्क करें' : 'Contact Us'}
+                </Link>
               </div>
             </div>
           </div>
@@ -165,7 +218,7 @@ const Home = () => {
               <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-2">
                 {language === 'hindi' 
                   ? 'जागत जननी महिला विकास फाउंडेशन - प्रगति महिला विकास केंद्र'
-                  : 'Jaagat Janni Mahila Vikash Foundation - Pragati Mahila Vikash Kendra'}
+                  : 'Jaagat Janni Mahila Bikash Foundation - Pragati Mahila Bikash Kendra'}
               </p>
               <p className="text-base text-gray-500 max-w-2xl mx-auto">
                 {language === 'hindi' 

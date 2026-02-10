@@ -23,14 +23,14 @@ const Footer = () => {
           {/* About Section */}
           <div>
             <h3 className="text-xl font-bold mb-4 hindi-text">
-              {language === 'hindi' ? 'जागत जननी महिला विकास फाउंडेशन' : 'Jaagat Janni Mahila Vikash Foundation'}
+              {language === 'hindi' ? 'जागत जननी महिला विकास फाउंडेशन' : 'Jaagat Janni Mahila Bikash Foundation'}
             </h3>
             <p className="text-gray-400 mb-4 text-sm">
               {language === 'hindi' 
                 ? 'महिलाओं के स्वास्थ्य, सुरक्षा, विकास और सशक्तिकरण के लिए समर्पित'
                 : 'Dedicated to women\'s health, safety, development and empowerment'}
             </p>
-            <p className="text-sm text-gray-500">Pragati Mahila Vikash Kendra</p>
+            <p className="text-sm text-gray-500">Pragati Mahila Bikash Kendra</p>
           </div>
 
           {/* Quick Links */}
@@ -124,8 +124,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <FiMail className="h-5 w-5 text-primary-400" />
-                <a href="mailto:info@jjmvikashfoundation.com" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  info@jjmvikashfoundation.com
+                <a href="mailto:info@jjmbikashfoundation.com" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  info@jjmbikashfoundation.com
                 </a>
               </div>
             </div>
@@ -167,7 +167,7 @@ const Footer = () => {
           <p>
             &copy; {new Date().getFullYear()} {language === 'hindi' 
               ? 'जागत जननी महिला विकास फाउंडेशन। सभी अधिकार सुरक्षित।'
-              : 'Jaagat Janni Mahila Vikash Foundation. All rights reserved.'}
+              : 'Jaagat Janni Mahila Bikash Foundation. All rights reserved.'}
           </p>
         </div>
       </div>

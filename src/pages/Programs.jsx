@@ -98,7 +98,7 @@ const Programs = () => {
               <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-2">
                 {language === 'hindi' 
                   ? 'जागत जननी महिला विकास फाउंडेशन - प्रगति महिला विकास केंद्र'
-                  : 'Jaagat Janni Mahila Vikash Foundation - Pragati Mahila Vikash Kendra'}
+                  : 'Jaagat Janni Mahila Bikash Foundation - Pragati Mahila Bikash Kendra'}
               </p>
               <p className="text-base text-white/80 max-w-2xl mx-auto">
                 {language === 'hindi' 

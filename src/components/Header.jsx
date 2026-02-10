@@ -38,7 +38,7 @@ const Header = () => {
               <h1 className="text-base lg:text-lg xl:text-xl font-bold text-primary-700 hindi-text leading-tight">
                 जागत जननी महिला विकास फाउंडेशन
               </h1>
-              <p className="text-xs lg:text-sm text-gray-600">Pragati Mahila Vikash Kendra</p>
+              <p className="text-xs lg:text-sm text-gray-600">Pragati Mahila Bikash Kendra</p>
             </div>
           </Link>
 

@@ -12,8 +12,8 @@ const Services = () => {
     <>
       <SEO 
         title="Services"
-        description="Jaagat Janni Mahila Vikash Foundation - Self-Help Group Services, Loans, Training Programs"
-        keywords="self-help group, SHG, loan schemes, women empowerment, savings scheme, training programs, Jaagat Janni Mahila Vikash Foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Mahila Bikas Foundation, mahila Bikas foundation, mahila bikas foundation"
+        description="Jaagat Janni Mahila Bikash Foundation - Self-Help Group Services, Loans, Training Programs"
+        keywords="mahila bikash foundation, Mahila Bikash Foundation, mahila bikash foundation Patna, Pragati Bikash Foundation, pragati bikash foundation, Pragati Bikash Foundation Patna, Pragati Mahila Vikas Foundation, Pragati Mahila Bikash Foundation, pragati mahila vikas foundation, pragati mahila bikash foundation, Pragati Mahila Vikas Foundation Patna, Pragati Mahila Bikash Foundation Patna, Pragati Mahila Vikas Kendra, Pragati Mahila Bikash Kendra, self-help group, SHG, loan schemes, women empowerment, savings scheme, training programs, Jaagat Janni Mahila Bikash Foundation, Jagat Janni Mahila Bikash Foundation, Jagat Ganni Mahila Bikash Foundation, Jaagat Ganni Mahila Bikash Foundation, jagat ganni mahila bikash foundation, jagat janni mahila bikash foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Mahila Bikas Foundation, mahila Bikas foundation, mahila bikas foundation"
       />
       <div className="pt-20">
         {/* Hero Section */}
@@ -35,7 +35,7 @@ const Services = () => {
                   <p className="text-xl md:text-2xl text-white/90">
                     {language === 'hindi' 
                       ? 'जागत जननी महिला विकास फाउंडेशन - प्रगति महिला विकास केंद्र'
-                      : 'Jaagat Janni Mahila Vikash Foundation - Pragati Mahila Vikash Kendra'}
+                      : 'Jaagat Janni Mahila Bikash Foundation - Pragati Mahila Bikash Kendra'}
                   </p>
                 </div>
               </div>

@@ -101,8 +101,8 @@ export const translations = {
       donate: 'Donate'
     },
     home: {
-      heroTitle: 'Jaagat Janni Mahila Vikash Foundation',
-      heroSubtitle: 'Pragati Mahila Vikash Kendra',
+      heroTitle: 'Jaagat Janni Mahila Bikash Foundation',
+      heroSubtitle: 'Pragati Mahila Bikash Kendra',
       heroDescription: 'Dedicated to women\'s health, safety, development and empowerment',
       ctaButton: 'Join Us',
       learnMore: 'Learn More',
@@ -118,7 +118,7 @@ export const translations = {
     },
     about: {
       title: 'About Us',
-      subtitle: 'Jaagat Janni Mahila Vikash Foundation',
+      subtitle: 'Jaagat Janni Mahila Bikash Foundation',
       description: 'We are a non-profit organization working for women\'s welfare and empowerment.',
       address: 'Ghurdaur Road, Digha Ashiana, Near SSB Camp, Patna-800011',
       established: 'Established',
