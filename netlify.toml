@@ -9,3 +9,22 @@
   status = 200
   force = true
 
+# WWW to non-WWW redirects (301 permanent)
+[[redirects]]
+  from = "https://www.jaagatjannimahilabikashfoundation.com/*"
+  to = "https://jaagatjannimahilabikashfoundation.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.jaagatjannimahilabikashfoundation.com/*"
+  to = "https://jaagatjannimahilabikashfoundation.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://jaagatjannimahilabikashfoundation.com/*"
+  to = "https://jaagatjannimahilabikashfoundation.com/:splat"
+  status = 301
+  force = true
+

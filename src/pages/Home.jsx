@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
       <SEO 
-        title="Mahila Bikash Foundation | Pragati Bikash Foundation | Pragati Mahila Vikas Foundation | Pragati Mahila Bikash Foundation - Women Empowerment Patna"
+        title="Mahila Bikash Foundation - Women Empowerment Patna Bihar"
         description="Mahila Bikash Foundation - Women empowerment, self-help groups, loans, savings schemes in Patna & Muzaffarpur, Bihar. Contact: +91 95258 68575"
         keywords="mahila bikash foundation, Mahila Bikash Foundation, mahila bikash foundation Patna, mahila bikash foundation Bihar, Pragati Bikash Foundation, pragati bikash foundation, Pragati Bikash Foundation Patna, Pragati Mahila Vikas Foundation, Pragati Mahila Bikash Foundation, pragati mahila vikas foundation, pragati mahila bikash foundation, Pragati Mahila Vikas Foundation Patna, Pragati Mahila Bikash Foundation Patna, Pragati Mahila Vikas Kendra, Pragati Mahila Bikash Kendra, Jaagat Janni Mahila Bikash Foundation, Jagat Janni Mahila Bikash Foundation, Jagat Ganni Mahila Bikash Foundation, Jaagat Ganni Mahila Bikash Foundation, jagat ganni mahila bikash foundation, jagat janni mahila bikash foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Pragati Mahila Bikas Kendra, महिला विकास फाउंडेशन, महिला विकास फाउंडेशन पटना, mahila vikas foundation, mahila bikas foundation, mahila Bikas foundation, Mahila Bikas Foundation, mahila vikas foundation Patna, mahila bikas foundation Patna, mahila Bikas foundation Patna, self-help group Patna, women empowerment Bihar, स्वयं सहायता समूह, बचत योजना, ऋण योजना, महिला सशक्तिकरण पटना, Muzaffarpur women foundation"
       />
@@ -82,8 +82,8 @@ const Home = () => {
               </h3>
               <p className="text-lg text-gray-700 mb-4 leading-relaxed">
                 {language === 'hindi' 
-                  ? 'हम महिलाओं को आर्थिक रूप से स्वतंत्र बनाने के लिए 10 प्रमुख सेवाएं प्रदान करते हैं। इनमें स्वयं सहायता समूह बनाना, बचत योजना, ऋण योजना, गाय पालन बकरी पालन योजना, पर्सनल लोन, बिज़नेस लोन, ग्रूप लोन, लघु उद्योग ट्रेनिंग योजना, सिलाई योजना, और एजुकेशन लोन योजना शामिल हैं।'
-                  : 'We provide 10 key services to make women economically independent. These include self-help group formation, savings scheme, loan scheme, cow & goat rearing scheme, personal loan, business loan, group loan, small industry training scheme, sewing scheme, and education loan scheme.'}
+                  ? 'हम महिलाओं को आर्थिक रूप से स्वतंत्र बनाने के लिए 10 प्रमुख सेवाएं प्रदान करते हैं। इनमें स्वयं सहायता समूह बनाना, बचत योजना, ऋण योजना, गाय पालन बकरी पालन योजना, पर्सनल लोन, बिज़नेस लोन, ग्रूप लोन, लघु उद्योग ट्रेनिंग योजना, सिलाई योजना, और एजुकेशन लोन योजना शामिल हैं। <Link to="/services" className="text-primary-600 hover:underline font-semibold">सभी सेवाओं की सूची</Link> देखें या <Link to="/empowerment" className="text-primary-600 hover:underline font-semibold">महिला सशक्तिकरण</Link> पृष्ठ पर जाएं।'
+                  : 'We provide 10 key services to make women economically independent. These include self-help group formation, savings scheme, loan scheme, cow & goat rearing scheme, personal loan, business loan, group loan, small industry training scheme, sewing scheme, and education loan scheme. View <Link to="/services" className="text-primary-600 hover:underline font-semibold">all services</Link> or visit our <Link to="/empowerment" className="text-primary-600 hover:underline font-semibold">Women Empowerment</Link> page.'}
               </p>
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 mt-8">
                 {language === 'hindi' ? 'हमारे बारे में' : 'About Us'}
@@ -601,11 +601,14 @@ const Home = () => {
                 <h3 className="text-xl font-semibold mb-3 text-gray-900 hindi-text">
                   {language === 'hindi' ? 'अनुभवी टीम' : 'Experienced Team'}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed mb-3">
                   {language === 'hindi' 
                     ? 'हमारी अनुभवी टीम महिला समूहों के गठन और प्रबंधन में पूर्ण मार्गदर्शन प्रदान करती है।'
                     : 'Our experienced team provides complete guidance in forming and managing women\'s groups.'}
                 </p>
+                <Link to="/about" className="text-primary-600 hover:underline text-sm font-semibold">
+                  {language === 'hindi' ? 'हमारे बारे में जानें' : 'Learn About Us'}
+                </Link>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-white rounded-xl p-6 shadow-lg border border-green-100 hover:shadow-xl transition-shadow">
                 <div className="bg-green-100 w-14 h-14 rounded-full flex items-center justify-center mb-4">
@@ -627,11 +630,14 @@ const Home = () => {
                 <h3 className="text-xl font-semibold mb-3 text-gray-900 hindi-text">
                   {language === 'hindi' ? 'व्यापक सेवाएं' : 'Comprehensive Services'}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 leading-relaxed mb-3">
                   {language === 'hindi' 
                     ? 'बचत से लेकर ऋण, प्रशिक्षण से लेकर व्यवसाय तक, हम सभी सेवाएं प्रदान करते हैं।'
                     : 'From savings to loans, training to business, we provide all services.'}
                 </p>
+                <Link to="/services" className="text-primary-600 hover:underline text-sm font-semibold">
+                  {language === 'hindi' ? 'सभी सेवाएं देखें' : 'View All Services'}
+                </Link>
               </div>
               <div className="bg-gradient-to-br from-purple-50 to-white rounded-xl p-6 shadow-lg border border-purple-100 hover:shadow-xl transition-shadow">
                 <div className="bg-purple-100 w-14 h-14 rounded-full flex items-center justify-center mb-4">
@@ -673,11 +679,14 @@ const Home = () => {
                 <h3 className="text-xl font-semibold mb-3 text-gray-900 hindi-text">
                   {language === 'hindi' ? 'समूह बनाएं' : 'Form Group'}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 mb-3">
                   {language === 'hindi' 
                     ? '10-15 महिलाओं का समूह बनाएं और हमारे कार्यालय में संपर्क करें'
                     : 'Form a group of 10-15 women and contact our office'}
                 </p>
+                <Link to="/contact" className="text-primary-600 hover:underline text-sm font-semibold">
+                  {language === 'hindi' ? 'संपर्क करें' : 'Contact Us'}
+                </Link>
               </div>
               <div className="text-center">
                 <div className="bg-primary-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
@@ -686,11 +695,14 @@ const Home = () => {
                 <h3 className="text-xl font-semibold mb-3 text-gray-900 hindi-text">
                   {language === 'hindi' ? 'पंजीकरण करें' : 'Register'}
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 mb-3">
                   {language === 'hindi' 
                     ? 'समूह का पंजीकरण करें और आवश्यक दस्तावेज जमा करें'
                     : 'Register the group and submit required documents'}
                 </p>
+                <Link to="/form" className="text-primary-600 hover:underline text-sm font-semibold">
+                  {language === 'hindi' ? 'पंजीकरण फॉर्म' : 'Registration Form'}
+                </Link>
               </div>
               <div className="text-center">
                 <div className="bg-primary-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
@@ -867,12 +879,15 @@ const Home = () => {
                   Ghurdaur Road, Digha Ashiana,<br />
                   Near SSB Camp, Patna-800011
                 </p>
-                <div className="flex items-center text-gray-700 mb-2">
+                <div className="flex items-center text-gray-700 mb-4">
                   <FiPhone className="h-5 w-5 mr-3 text-primary-600" />
                   <a href="tel:+919525868575" className="hover:text-primary-600 transition-colors">
                     +91 95258 68575
                   </a>
                 </div>
+                <Link to="/contact" className="text-primary-600 hover:underline font-semibold text-sm">
+                  {language === 'hindi' ? 'संपर्क पृष्ठ देखें' : 'View Contact Page'}
+                </Link>
               </div>
               <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
                 <div className="flex items-center mb-6">
@@ -967,6 +982,49 @@ const Home = () => {
           >
             {t.nav.form}
           </Link>
+        </div>
+      </section>
+
+      {/* Internal Links Navigation Section for SEO */}
+      <section className="py-12 md:py-16 bg-white border-t border-gray-200">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-gray-900 text-center hindi-text">
+              {language === 'hindi' ? 'महत्वपूर्ण पृष्ठ' : 'Important Pages'}
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-gray-900">
+                  {language === 'hindi' ? 'जानकारी' : 'Information'}
+                </h3>
+                <ul className="space-y-2">
+                  <li><Link to="/about" className="text-primary-600 hover:underline">{language === 'hindi' ? 'हमारे बारे में' : 'About Us'}</Link></li>
+                  <li><Link to="/empowerment" className="text-primary-600 hover:underline">{language === 'hindi' ? 'महिला सशक्तिकरण' : 'Women Empowerment'}</Link></li>
+                  <li><Link to="/programs" className="text-primary-600 hover:underline">{language === 'hindi' ? 'कार्यक्रम' : 'Programs'}</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-gray-900">
+                  {language === 'hindi' ? 'सेवाएं' : 'Services'}
+                </h3>
+                <ul className="space-y-2">
+                  <li><Link to="/services" className="text-primary-600 hover:underline">{language === 'hindi' ? 'सभी सेवाएं' : 'All Services'}</Link></li>
+                  <li><Link to="/health" className="text-primary-600 hover:underline">{language === 'hindi' ? 'स्वास्थ्य कार्यक्रम' : 'Health Programs'}</Link></li>
+                  <li><Link to="/safety" className="text-primary-600 hover:underline">{language === 'hindi' ? 'महिला सुरक्षा' : 'Women Safety'}</Link></li>
+                  <li><Link to="/development" className="text-primary-600 hover:underline">{language === 'hindi' ? 'विकास कार्यक्रम' : 'Development Programs'}</Link></li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold mb-4 text-gray-900">
+                  {language === 'hindi' ? 'संपर्क' : 'Contact'}
+                </h3>
+                <ul className="space-y-2">
+                  <li><Link to="/contact" className="text-primary-600 hover:underline">{language === 'hindi' ? 'संपर्क करें' : 'Contact Us'}</Link></li>
+                  <li><Link to="/form" className="text-primary-600 hover:underline">{language === 'hindi' ? 'पंजीकरण फॉर्म' : 'Registration Form'}</Link></li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
