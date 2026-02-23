@@ -1,21 +1,315 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../data/translations';
 import { services } from '../data/services';
-import { FiHeart, FiShield, FiTrendingUp, FiUsers, FiArrowRight, FiCheckCircle, FiPhone, FiMapPin, FiMail, FiClock, FiAward, FiTarget, FiHome, FiLock } from 'react-icons/fi';
+import { FiHeart, FiShield, FiTrendingUp, FiUsers, FiArrowRight, FiCheckCircle, FiPhone, FiMapPin, FiMail, FiClock, FiAward, FiTarget, FiHome, FiLock, FiPlay, FiPause, FiVolume2, FiVolumeX } from 'react-icons/fi';
 import SEO from '../components/SEO';
 
 const Home = () => {
   const { language } = useLanguage();
   const t = translations[language];
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const iframeRef = useRef(null);
+  
+  // State for video gallery section
+  const [playingVideo1, setPlayingVideo1] = useState(false);
+  const [playingVideo2, setPlayingVideo2] = useState(false);
+  const [playingVideo3, setPlayingVideo3] = useState(false);
+  const [playingVideo4, setPlayingVideo4] = useState(false);
+  const [mutedVideo1, setMutedVideo1] = useState(true);
+  const [mutedVideo2, setMutedVideo2] = useState(true);
+  const [mutedVideo3, setMutedVideo3] = useState(true);
+  const [mutedVideo4, setMutedVideo4] = useState(true);
+  const video1Ref = useRef(null);
+  const video2Ref = useRef(null);
+  const video3Ref = useRef(null);
+  const video4Ref = useRef(null);
+  const youtubePlayer1Ref = useRef(null);
+  const youtubePlayer2Ref = useRef(null);
+  const youtubePlayer3Ref = useRef(null);
+  const youtubePlayer4Ref = useRef(null);
+  
+  // YouTube Video IDs
+  const youtubeVideoIds = [
+    'aBY8LJQmyh4', // HomePage video ID
+    'KSUq_V0MCdA', // HomePage1 video ID
+    '13PTTsJAiLE', // Video 3
+    'Pd4eV-Asi-g'  // Video 4
+  ];
+  
+  // Use YouTube videos (local videos as fallback only)
+  const useLocalVideos = false;
+  const localVideos = ['/video/HomePage.mp4', '/video/HomePage1.mp4'];
+
+  // YouTube embed URL generator
+  const getYouTubeEmbedUrl = (videoId) => {
+    const params = new URLSearchParams({
+      autoplay: '1',
+      mute: '1',
+      loop: '1',
+      playlist: videoId, // Loop single video
+      controls: '0',
+      showinfo: '0',
+      rel: '0',
+      modestbranding: '1',
+      playsinline: '1',
+      enablejsapi: '1'
+    });
+    
+    return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
+  };
+
+  // Initialize YouTube players for gallery videos
+  const initializeYouTubePlayers = () => {
+    if (!window.YT || !window.YT.Player) {
+      // Load YouTube API if not already loaded
+      if (!document.querySelector('script[src*="youtube.com/iframe_api"]')) {
+        const tag = document.createElement('script');
+        tag.src = 'https://www.youtube.com/iframe_api';
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+        // Set up callback for when API is ready
+        window.onYouTubeIframeAPIReady = () => {
+          initializePlayers();
+        };
+      }
+      return;
+    }
+
+    initializePlayers();
+  };
+
+  const initializePlayers = () => {
+    // Initialize player 1
+    if (video1Ref.current && !youtubePlayer1Ref.current && window.YT && window.YT.Player) {
+      try {
+        youtubePlayer1Ref.current = new window.YT.Player(video1Ref.current, {
+          videoId: youtubeVideoIds[0],
+          playerVars: {
+            autoplay: 0,
+            mute: 1,
+            controls: 0,
+            modestbranding: 1,
+            rel: 0,
+            enablejsapi: 1,
+            playsinline: 1
+          },
+          events: {
+            onStateChange: (event) => {
+              if (event.data === window.YT.PlayerState.PLAYING) {
+                setPlayingVideo1(true);
+              } else if (event.data === window.YT.PlayerState.PAUSED) {
+                setPlayingVideo1(false);
+              } else if (event.data === window.YT.PlayerState.ENDED) {
+                setPlayingVideo1(false);
+              }
+            },
+            onReady: (event) => {
+              console.log('YouTube Player 1 ready');
+            },
+            onError: (event) => {
+              console.error('YouTube Player 1 error:', event);
+            }
+          }
+        });
+      } catch (error) {
+        console.error('Error initializing YouTube Player 1:', error);
+      }
+    }
+
+    // Initialize player 2
+    if (video2Ref.current && !youtubePlayer2Ref.current && window.YT && window.YT.Player) {
+      try {
+        youtubePlayer2Ref.current = new window.YT.Player(video2Ref.current, {
+          videoId: youtubeVideoIds[1],
+          playerVars: {
+            autoplay: 0,
+            mute: 1,
+            controls: 0,
+            modestbranding: 1,
+            rel: 0,
+            enablejsapi: 1,
+            playsinline: 1
+          },
+          events: {
+            onStateChange: (event) => {
+              if (event.data === window.YT.PlayerState.PLAYING) {
+                setPlayingVideo2(true);
+              } else if (event.data === window.YT.PlayerState.PAUSED) {
+                setPlayingVideo2(false);
+              } else if (event.data === window.YT.PlayerState.ENDED) {
+                setPlayingVideo2(false);
+              }
+            },
+            onReady: () => {
+              console.log('YouTube Player 2 ready');
+            },
+            onError: (event) => {
+              console.error('YouTube Player 2 error:', event);
+            }
+          }
+        });
+      } catch (error) {
+        console.error('Error initializing YouTube Player 2:', error);
+      }
+    }
+
+    // Initialize player 3
+    if (video3Ref.current && !youtubePlayer3Ref.current && window.YT && window.YT.Player) {
+      try {
+        youtubePlayer3Ref.current = new window.YT.Player(video3Ref.current, {
+          videoId: youtubeVideoIds[2],
+          playerVars: {
+            autoplay: 0,
+            mute: 1,
+            controls: 0,
+            modestbranding: 1,
+            rel: 0,
+            enablejsapi: 1,
+            playsinline: 1
+          },
+          events: {
+            onStateChange: (event) => {
+              if (event.data === window.YT.PlayerState.PLAYING) {
+                setPlayingVideo3(true);
+              } else if (event.data === window.YT.PlayerState.PAUSED) {
+                setPlayingVideo3(false);
+              } else if (event.data === window.YT.PlayerState.ENDED) {
+                setPlayingVideo3(false);
+              }
+            },
+            onReady: () => {
+              console.log('YouTube Player 3 ready');
+            },
+            onError: (event) => {
+              console.error('YouTube Player 3 error:', event);
+            }
+          }
+        });
+      } catch (error) {
+        console.error('Error initializing YouTube Player 3:', error);
+      }
+    }
+
+    // Initialize player 4
+    if (video4Ref.current && !youtubePlayer4Ref.current && window.YT && window.YT.Player) {
+      try {
+        youtubePlayer4Ref.current = new window.YT.Player(video4Ref.current, {
+          videoId: youtubeVideoIds[3],
+          playerVars: {
+            autoplay: 0,
+            mute: 1,
+            controls: 0,
+            modestbranding: 1,
+            rel: 0,
+            enablejsapi: 1,
+            playsinline: 1
+          },
+          events: {
+            onStateChange: (event) => {
+              if (event.data === window.YT.PlayerState.PLAYING) {
+                setPlayingVideo4(true);
+              } else if (event.data === window.YT.PlayerState.PAUSED) {
+                setPlayingVideo4(false);
+              } else if (event.data === window.YT.PlayerState.ENDED) {
+                setPlayingVideo4(false);
+              }
+            },
+            onReady: () => {
+              console.log('YouTube Player 4 ready');
+            },
+            onError: (event) => {
+              console.error('YouTube Player 4 error:', event);
+            }
+          }
+        });
+      } catch (error) {
+        console.error('Error initializing YouTube Player 4:', error);
+      }
+    }
+  };
+
+  // Load YouTube IFrame API and initialize players
+  useEffect(() => {
+    // Check if API is already loaded
+    if (window.YT && window.YT.Player) {
+      // Small delay to ensure refs are set
+      const timer = setTimeout(() => {
+        initializePlayers();
+      }, 100);
+      return () => clearTimeout(timer);
+    } else {
+      initializeYouTubePlayers();
+    }
+
+    return () => {
+      // Cleanup
+      if (youtubePlayer1Ref.current && youtubePlayer1Ref.current.destroy) {
+        youtubePlayer1Ref.current.destroy();
+        youtubePlayer1Ref.current = null;
+      }
+      if (youtubePlayer2Ref.current && youtubePlayer2Ref.current.destroy) {
+        youtubePlayer2Ref.current.destroy();
+        youtubePlayer2Ref.current = null;
+      }
+      if (youtubePlayer3Ref.current && youtubePlayer3Ref.current.destroy) {
+        youtubePlayer3Ref.current.destroy();
+        youtubePlayer3Ref.current = null;
+      }
+      if (youtubePlayer4Ref.current && youtubePlayer4Ref.current.destroy) {
+        youtubePlayer4Ref.current.destroy();
+        youtubePlayer4Ref.current = null;
+      }
+    };
+  }, [youtubeVideoIds]);
+
+  // Handle YouTube video end to switch to next video
+  useEffect(() => {
+    if (!useLocalVideos && iframeRef.current && window.YT) {
+      let player;
+      
+      window.onYouTubeIframeAPIReady = () => {
+        player = new window.YT.Player(iframeRef.current, {
+          events: {
+            onStateChange: (event) => {
+              // When video ends, switch to next one
+              if (event.data === window.YT.PlayerState.ENDED) {
+                setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % youtubeVideoIds.length);
+              }
+            }
+          }
+        });
+      };
+
+      // If API is already loaded
+      if (window.YT && window.YT.Player) {
+        player = new window.YT.Player(iframeRef.current, {
+          events: {
+            onStateChange: (event) => {
+              if (event.data === window.YT.PlayerState.ENDED) {
+                setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % youtubeVideoIds.length);
+              }
+            }
+          }
+        });
+      }
+
+      return () => {
+        if (player && player.destroy) {
+          player.destroy();
+        }
+      };
+    }
+  }, [currentVideoIndex, youtubeVideoIds.length, useLocalVideos]);
 
   return (
     <>
       <SEO 
-        title="Mahila Bikash Foundation - Women Empowerment Patna Bihar"
-        description="Mahila Bikash Foundation - Women empowerment, self-help groups, loans, savings schemes in Patna & Muzaffarpur, Bihar. Contact: +91 95258 68575"
-        keywords="mahila bikash foundation, Mahila Bikash Foundation, mahila bikash foundation Patna, mahila bikash foundation Bihar, Pragati Bikash Foundation, pragati bikash foundation, Pragati Bikash Foundation Patna, Pragati Mahila Vikas Foundation, Pragati Mahila Bikash Foundation, pragati mahila vikas foundation, pragati mahila bikash foundation, Pragati Mahila Vikas Foundation Patna, Pragati Mahila Bikash Foundation Patna, Pragati Mahila Vikas Kendra, Pragati Mahila Bikash Kendra, Jaagat Janni Mahila Bikash Foundation, Jagat Janni Mahila Bikash Foundation, Jagat Ganni Mahila Bikash Foundation, Jaagat Ganni Mahila Bikash Foundation, jagat ganni mahila bikash foundation, jagat janni mahila bikash foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Pragati Mahila Bikas Kendra, महिला विकास फाउंडेशन, महिला विकास फाउंडेशन पटना, mahila vikas foundation, mahila bikas foundation, mahila Bikas foundation, Mahila Bikas Foundation, mahila vikas foundation Patna, mahila bikas foundation Patna, mahila Bikas foundation Patna, self-help group Patna, women empowerment Bihar, स्वयं सहायता समूह, बचत योजना, ऋण योजना, महिला सशक्तिकरण पटना, Muzaffarpur women foundation"
+        title="Pragati Mahila Vikas Foundation | Pragati Mahila Bikash Foundation | Pragati Mahila Vikas Kendra | Pragati Mahila Bikash Kendra - Women Empowerment Patna"
+        description="Pragati Mahila Vikas Foundation / Pragati Mahila Bikash Foundation (Pragati Mahila Vikas Kendra / Pragati Mahila Bikash Kendra / Jaagat Janni Mahila Bikash Foundation) - Self-help group services, loans, savings schemes, training programs for women empowerment in Patna and Muzaffarpur, Bihar. Contact: +91 95258 68575, +91 82102 89314"
+        keywords="Pragati Mahila Vikas Foundation, Pragati Mahila Bikash Foundation, pragati mahila vikas foundation, pragati mahila bikash foundation, Pragati Mahila Vikas Foundation Patna, Pragati Mahila Bikash Foundation Patna, Pragati Mahila Vikas Kendra, Pragati Mahila Bikash Kendra, mahila bikash foundation, Mahila Bikash Foundation, mahila bikash foundation Patna, mahila bikash foundation Bihar, Jaagat Janni Mahila Bikash Foundation, Jagat Janni Mahila Bikash Foundation, Jagat Ganni Mahila Bikash Foundation, Jaagat Ganni Mahila Bikash Foundation, jagat ganni mahila bikash foundation, jagat janni mahila bikash foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Pragati Mahila Bikas Kendra, महिला विकास फाउंडेशन, महिला विकास फाउंडेशन पटना, mahila vikas foundation, mahila bikas foundation, mahila Bikas foundation, Mahila Bikas Foundation, mahila vikas foundation Patna, mahila bikas foundation Patna, mahila Bikas foundation Patna, self-help group Patna, women empowerment Bihar, स्वयं सहायता समूह, बचत योजना, ऋण योजना, महिला सशक्तिकरण पटना, Muzaffarpur women foundation"
       />
       <div className="pt-20">
       {/* Hero Image Section */}
@@ -58,59 +352,6 @@ const Home = () => {
                     {t.home.learnMore}
                   </Link>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SEO Rich Content Section */}
-      <section className="py-12 md:py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 text-center">
-                {language === 'hindi' ? 'महिला बिकास फाउंडेशन - महिला सशक्तिकरण में अग्रणी' : 'Mahila Bikash Foundation - Leading in Women Empowerment'}
-              </h2>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed text-center">
-                {language === 'hindi' 
-                  ? 'जागत जननी महिला विकास फाउंडेशन (प्रगति महिला विकास केंद्र) बिहार के पटना और मुजफ्फरपुर में महिलाओं के सशक्तिकरण के लिए समर्पित है। हम स्वयं सहायता समूह बनाने, ऋण योजनाएं, बचत योजनाएं, और प्रशिक्षण कार्यक्रम प्रदान करते हैं।'
-                  : 'Jaagat Janni Mahila Bikash Foundation (Pragati Mahila Bikash Kendra) is dedicated to empowering women in Patna and Muzaffarpur, Bihar. We provide self-help group formation, loan schemes, savings schemes, and training programs.'}
-              </p>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 mt-8">
-                {language === 'hindi' ? 'हमारी सेवाएं' : 'Our Services'}
-              </h3>
-              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                {language === 'hindi' 
-                  ? 'हम महिलाओं को आर्थिक रूप से स्वतंत्र बनाने के लिए 10 प्रमुख सेवाएं प्रदान करते हैं। इनमें स्वयं सहायता समूह बनाना, बचत योजना, ऋण योजना, गाय पालन बकरी पालन योजना, पर्सनल लोन, बिज़नेस लोन, ग्रूप लोन, लघु उद्योग ट्रेनिंग योजना, सिलाई योजना, और एजुकेशन लोन योजना शामिल हैं। <Link to="/services" className="text-primary-600 hover:underline font-semibold">सभी सेवाओं की सूची</Link> देखें या <Link to="/empowerment" className="text-primary-600 hover:underline font-semibold">महिला सशक्तिकरण</Link> पृष्ठ पर जाएं।'
-                  : 'We provide 10 key services to make women economically independent. These include self-help group formation, savings scheme, loan scheme, cow & goat rearing scheme, personal loan, business loan, group loan, small industry training scheme, sewing scheme, and education loan scheme. View <Link to="/services" className="text-primary-600 hover:underline font-semibold">all services</Link> or visit our <Link to="/empowerment" className="text-primary-600 hover:underline font-semibold">Women Empowerment</Link> page.'}
-              </p>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 mt-8">
-                {language === 'hindi' ? 'हमारे बारे में' : 'About Us'}
-              </h3>
-              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                {language === 'hindi' 
-                  ? '2024 में स्थापित, जागत जननी महिला विकास फाउंडेशन महिलाओं के समग्र विकास के लिए काम कर रहा है। हमारा मुख्य उद्देश्य महिलाओं को आर्थिक रूप से सशक्त बनाना और उन्हें विभिन्न वित्तीय सेवाओं तक पहुंच प्रदान करना है।'
-                  : 'Established in 2024, Jaagat Janni Mahila Bikash Foundation is working for the overall development of women. Our main objective is to economically empower women and provide them access to various financial services.'}
-              </p>
-              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                {language === 'hindi' 
-                  ? <>अधिक जानकारी के लिए, कृपया <Link to="/about" className="text-primary-600 hover:underline font-semibold">हमारे बारे में</Link> पृष्ठ पर जाएं या <Link to="/empowerment" className="text-primary-600 hover:underline font-semibold">महिला सशक्तिकरण</Link> पृष्ठ देखें।</>
-                  : <>For more information, please visit our <Link to="/about" className="text-primary-600 hover:underline font-semibold">About Us</Link> page or check our <Link to="/empowerment" className="text-primary-600 hover:underline font-semibold">Women Empowerment</Link> page.</>}
-              </p>
-              <div className="flex flex-wrap gap-4 justify-center mt-8">
-                <Link to="/about" className="px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors">
-                  {language === 'hindi' ? 'हमारे बारे में' : 'About Us'}
-                </Link>
-                <Link to="/empowerment" className="px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors">
-                  {language === 'hindi' ? 'महिला सशक्तिकरण' : 'Women Empowerment'}
-                </Link>
-                <Link to="/services" className="px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors">
-                  {language === 'hindi' ? 'सेवाएं' : 'Services'}
-                </Link>
-                <Link to="/contact" className="px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors">
-                  {language === 'hindi' ? 'संपर्क करें' : 'Contact Us'}
-                </Link>
               </div>
             </div>
           </div>
@@ -202,6 +443,346 @@ const Home = () => {
               <p className="text-gray-600 text-lg leading-relaxed">
                 {t.home.visionText}
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Video Gallery Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 text-gray-900 hindi-text">
+                {language === 'hindi' ? 'अपनी क्षमता को खोलें' : 'Unlock Your Potential'}
+              </h2>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                {language === 'hindi' 
+                  ? 'हमसे जुड़कर देखें कि कैसे हमारे कार्यक्रम महिलाओं को आर्थिक स्वतंत्रता और सशक्तिकरण प्रदान करते हैं'
+                  : 'Join us and discover how our programs provide economic independence and empowerment to women'}
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Video 1 */}
+              <div className="relative group">
+                <div className="relative rounded-xl overflow-hidden shadow-2xl bg-gray-900 aspect-video">
+                  <div 
+                    ref={video1Ref}
+                    className="w-full h-full"
+                  />
+                  {/* Play/Pause Overlay */}
+                  {!playingVideo1 && (
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer transition-opacity hover:bg-black/40 z-10"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (youtubePlayer1Ref.current && youtubePlayer1Ref.current.playVideo) {
+                          try {
+                            youtubePlayer1Ref.current.unMute();
+                            youtubePlayer1Ref.current.playVideo();
+                            setMutedVideo1(false);
+                          } catch (error) {
+                            console.error('Error playing video 1:', error);
+                            // Fallback: try to initialize if not ready
+                            if (video1Ref.current) {
+                              initializePlayers();
+                            }
+                          }
+                        } else {
+                          // Player not initialized, try to initialize
+                          initializePlayers();
+                        }
+                      }}
+                    >
+                      <div className="bg-white/90 rounded-full p-6 hover:bg-white transition-colors">
+                        <FiPlay className="h-12 w-12 text-primary-600 ml-1" />
+                      </div>
+                    </div>
+                  )}
+                  {/* Pause button when playing */}
+                  {playingVideo1 && (
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center bg-black/0 cursor-pointer transition-opacity hover:bg-black/20 z-10"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (youtubePlayer1Ref.current) {
+                          youtubePlayer1Ref.current.pauseVideo();
+                        }
+                      }}
+                    >
+                      <div className="bg-white/90 rounded-full p-6 hover:bg-white transition-colors opacity-0 hover:opacity-100">
+                        <FiPause className="h-12 w-12 text-primary-600" />
+                      </div>
+                    </div>
+                  )}
+                  {/* Volume Control */}
+                  {playingVideo1 && (
+                    <div className="absolute bottom-4 right-4 z-10">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setMutedVideo1(!mutedVideo1);
+                          if (youtubePlayer1Ref.current) {
+                            if (mutedVideo1) {
+                              youtubePlayer1Ref.current.unMute();
+                            } else {
+                              youtubePlayer1Ref.current.mute();
+                            }
+                          }
+                        }}
+                        className="bg-black/70 hover:bg-black/90 rounded-full p-3 text-white transition-colors"
+                      >
+                        {mutedVideo1 ? (
+                          <FiVolumeX className="h-5 w-5" />
+                        ) : (
+                          <FiVolume2 className="h-5 w-5" />
+                        )}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Video 2 */}
+              <div className="relative group">
+                <div className="relative rounded-xl overflow-hidden shadow-2xl bg-gray-900 aspect-video">
+                  <div 
+                    ref={video2Ref}
+                    className="w-full h-full"
+                  />
+                  {/* Play/Pause Overlay */}
+                  {!playingVideo2 && (
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer transition-opacity hover:bg-black/40 z-10"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (youtubePlayer2Ref.current && youtubePlayer2Ref.current.playVideo) {
+                          try {
+                            youtubePlayer2Ref.current.unMute();
+                            youtubePlayer2Ref.current.playVideo();
+                            setMutedVideo2(false);
+                          } catch (error) {
+                            console.error('Error playing video 2:', error);
+                            // Fallback: try to initialize if not ready
+                            if (video2Ref.current) {
+                              initializePlayers();
+                            }
+                          }
+                        } else {
+                          // Player not initialized, try to initialize
+                          initializePlayers();
+                        }
+                      }}
+                    >
+                      <div className="bg-white/90 rounded-full p-6 hover:bg-white transition-colors">
+                        <FiPlay className="h-12 w-12 text-primary-600 ml-1" />
+                      </div>
+                    </div>
+                  )}
+                  {/* Pause button when playing */}
+                  {playingVideo2 && (
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center bg-black/0 cursor-pointer transition-opacity hover:bg-black/20 z-10"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (youtubePlayer2Ref.current) {
+                          youtubePlayer2Ref.current.pauseVideo();
+                        }
+                      }}
+                    >
+                      <div className="bg-white/90 rounded-full p-6 hover:bg-white transition-colors opacity-0 hover:opacity-100">
+                        <FiPause className="h-12 w-12 text-primary-600" />
+                      </div>
+                    </div>
+                  )}
+                  {/* Volume Control */}
+                  {playingVideo2 && (
+                    <div className="absolute bottom-4 right-4 z-10">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setMutedVideo2(!mutedVideo2);
+                          if (youtubePlayer2Ref.current) {
+                            if (mutedVideo2) {
+                              youtubePlayer2Ref.current.unMute();
+                            } else {
+                              youtubePlayer2Ref.current.mute();
+                            }
+                          }
+                        }}
+                        className="bg-black/70 hover:bg-black/90 rounded-full p-3 text-white transition-colors"
+                      >
+                        {mutedVideo2 ? (
+                          <FiVolumeX className="h-5 w-5" />
+                        ) : (
+                          <FiVolume2 className="h-5 w-5" />
+                        )}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Video 3 */}
+              <div className="relative group">
+                <div className="relative rounded-xl overflow-hidden shadow-2xl bg-gray-900 aspect-video">
+                  <div 
+                    ref={video3Ref}
+                    className="w-full h-full"
+                  />
+                  {/* Play/Pause Overlay */}
+                  {!playingVideo3 && (
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer transition-opacity hover:bg-black/40 z-10"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (youtubePlayer3Ref.current && youtubePlayer3Ref.current.playVideo) {
+                          try {
+                            youtubePlayer3Ref.current.unMute();
+                            youtubePlayer3Ref.current.playVideo();
+                            setMutedVideo3(false);
+                          } catch (error) {
+                            console.error('Error playing video 3:', error);
+                            if (video3Ref.current) {
+                              initializePlayers();
+                            }
+                          }
+                        } else {
+                          initializePlayers();
+                        }
+                      }}
+                    >
+                      <div className="bg-white/90 rounded-full p-6 hover:bg-white transition-colors">
+                        <FiPlay className="h-12 w-12 text-primary-600 ml-1" />
+                      </div>
+                    </div>
+                  )}
+                  {/* Pause button when playing */}
+                  {playingVideo3 && (
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center bg-black/0 cursor-pointer transition-opacity hover:bg-black/20 z-10"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (youtubePlayer3Ref.current) {
+                          youtubePlayer3Ref.current.pauseVideo();
+                        }
+                      }}
+                    >
+                      <div className="bg-white/90 rounded-full p-6 hover:bg-white transition-colors opacity-0 hover:opacity-100">
+                        <FiPause className="h-12 w-12 text-primary-600" />
+                      </div>
+                    </div>
+                  )}
+                  {/* Volume Control */}
+                  {playingVideo3 && (
+                    <div className="absolute bottom-4 right-4 z-10">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setMutedVideo3(!mutedVideo3);
+                          if (youtubePlayer3Ref.current) {
+                            if (mutedVideo3) {
+                              youtubePlayer3Ref.current.unMute();
+                            } else {
+                              youtubePlayer3Ref.current.mute();
+                            }
+                          }
+                        }}
+                        className="bg-black/70 hover:bg-black/90 rounded-full p-3 text-white transition-colors"
+                      >
+                        {mutedVideo3 ? (
+                          <FiVolumeX className="h-5 w-5" />
+                        ) : (
+                          <FiVolume2 className="h-5 w-5" />
+                        )}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Video 4 */}
+              <div className="relative group">
+                <div className="relative rounded-xl overflow-hidden shadow-2xl bg-gray-900 aspect-video">
+                  <div 
+                    ref={video4Ref}
+                    className="w-full h-full"
+                  />
+                  {/* Play/Pause Overlay */}
+                  {!playingVideo4 && (
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer transition-opacity hover:bg-black/40 z-10"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        if (youtubePlayer4Ref.current && youtubePlayer4Ref.current.playVideo) {
+                          try {
+                            youtubePlayer4Ref.current.unMute();
+                            youtubePlayer4Ref.current.playVideo();
+                            setMutedVideo4(false);
+                          } catch (error) {
+                            console.error('Error playing video 4:', error);
+                            if (video4Ref.current) {
+                              initializePlayers();
+                            }
+                          }
+                        } else {
+                          initializePlayers();
+                        }
+                      }}
+                    >
+                      <div className="bg-white/90 rounded-full p-6 hover:bg-white transition-colors">
+                        <FiPlay className="h-12 w-12 text-primary-600 ml-1" />
+                      </div>
+                    </div>
+                  )}
+                  {/* Pause button when playing */}
+                  {playingVideo4 && (
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center bg-black/0 cursor-pointer transition-opacity hover:bg-black/20 z-10"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (youtubePlayer4Ref.current) {
+                          youtubePlayer4Ref.current.pauseVideo();
+                        }
+                      }}
+                    >
+                      <div className="bg-white/90 rounded-full p-6 hover:bg-white transition-colors opacity-0 hover:opacity-100">
+                        <FiPause className="h-12 w-12 text-primary-600" />
+                      </div>
+                    </div>
+                  )}
+                  {/* Volume Control */}
+                  {playingVideo4 && (
+                    <div className="absolute bottom-4 right-4 z-10">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setMutedVideo4(!mutedVideo4);
+                          if (youtubePlayer4Ref.current) {
+                            if (mutedVideo4) {
+                              youtubePlayer4Ref.current.unMute();
+                            } else {
+                              youtubePlayer4Ref.current.mute();
+                            }
+                          }
+                        }}
+                        className="bg-black/70 hover:bg-black/90 rounded-full p-3 text-white transition-colors"
+                      >
+                        {mutedVideo4 ? (
+                          <FiVolumeX className="h-5 w-5" />
+                        ) : (
+                          <FiVolume2 className="h-5 w-5" />
+                        )}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -601,14 +1182,11 @@ const Home = () => {
                 <h3 className="text-xl font-semibold mb-3 text-gray-900 hindi-text">
                   {language === 'hindi' ? 'अनुभवी टीम' : 'Experienced Team'}
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-3">
+                <p className="text-gray-600 leading-relaxed">
                   {language === 'hindi' 
                     ? 'हमारी अनुभवी टीम महिला समूहों के गठन और प्रबंधन में पूर्ण मार्गदर्शन प्रदान करती है।'
                     : 'Our experienced team provides complete guidance in forming and managing women\'s groups.'}
                 </p>
-                <Link to="/about" className="text-primary-600 hover:underline text-sm font-semibold">
-                  {language === 'hindi' ? 'हमारे बारे में जानें' : 'Learn About Us'}
-                </Link>
               </div>
               <div className="bg-gradient-to-br from-green-50 to-white rounded-xl p-6 shadow-lg border border-green-100 hover:shadow-xl transition-shadow">
                 <div className="bg-green-100 w-14 h-14 rounded-full flex items-center justify-center mb-4">
@@ -630,14 +1208,11 @@ const Home = () => {
                 <h3 className="text-xl font-semibold mb-3 text-gray-900 hindi-text">
                   {language === 'hindi' ? 'व्यापक सेवाएं' : 'Comprehensive Services'}
                 </h3>
-                <p className="text-gray-600 leading-relaxed mb-3">
+                <p className="text-gray-600 leading-relaxed">
                   {language === 'hindi' 
                     ? 'बचत से लेकर ऋण, प्रशिक्षण से लेकर व्यवसाय तक, हम सभी सेवाएं प्रदान करते हैं।'
                     : 'From savings to loans, training to business, we provide all services.'}
                 </p>
-                <Link to="/services" className="text-primary-600 hover:underline text-sm font-semibold">
-                  {language === 'hindi' ? 'सभी सेवाएं देखें' : 'View All Services'}
-                </Link>
               </div>
               <div className="bg-gradient-to-br from-purple-50 to-white rounded-xl p-6 shadow-lg border border-purple-100 hover:shadow-xl transition-shadow">
                 <div className="bg-purple-100 w-14 h-14 rounded-full flex items-center justify-center mb-4">
@@ -679,14 +1254,11 @@ const Home = () => {
                 <h3 className="text-xl font-semibold mb-3 text-gray-900 hindi-text">
                   {language === 'hindi' ? 'समूह बनाएं' : 'Form Group'}
                 </h3>
-                <p className="text-gray-600 mb-3">
+                <p className="text-gray-600">
                   {language === 'hindi' 
                     ? '10-15 महिलाओं का समूह बनाएं और हमारे कार्यालय में संपर्क करें'
                     : 'Form a group of 10-15 women and contact our office'}
                 </p>
-                <Link to="/contact" className="text-primary-600 hover:underline text-sm font-semibold">
-                  {language === 'hindi' ? 'संपर्क करें' : 'Contact Us'}
-                </Link>
               </div>
               <div className="text-center">
                 <div className="bg-primary-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
@@ -695,14 +1267,11 @@ const Home = () => {
                 <h3 className="text-xl font-semibold mb-3 text-gray-900 hindi-text">
                   {language === 'hindi' ? 'पंजीकरण करें' : 'Register'}
                 </h3>
-                <p className="text-gray-600 mb-3">
+                <p className="text-gray-600">
                   {language === 'hindi' 
                     ? 'समूह का पंजीकरण करें और आवश्यक दस्तावेज जमा करें'
                     : 'Register the group and submit required documents'}
                 </p>
-                <Link to="/form" className="text-primary-600 hover:underline text-sm font-semibold">
-                  {language === 'hindi' ? 'पंजीकरण फॉर्म' : 'Registration Form'}
-                </Link>
               </div>
               <div className="text-center">
                 <div className="bg-primary-600 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
@@ -865,7 +1434,7 @@ const Home = () => {
                   : 'Visit our offices or call us'}
               </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
                 <div className="flex items-center mb-6">
                   <div className="bg-primary-100 p-3 rounded-full mr-4">
@@ -879,15 +1448,12 @@ const Home = () => {
                   Ghurdaur Road, Digha Ashiana,<br />
                   Near SSB Camp, Patna-800011
                 </p>
-                <div className="flex items-center text-gray-700 mb-4">
+                <div className="flex items-center text-gray-700 mb-2">
                   <FiPhone className="h-5 w-5 mr-3 text-primary-600" />
                   <a href="tel:+919525868575" className="hover:text-primary-600 transition-colors">
                     +91 95258 68575
                   </a>
                 </div>
-                <Link to="/contact" className="text-primary-600 hover:underline font-semibold text-sm">
-                  {language === 'hindi' ? 'संपर्क पृष्ठ देखें' : 'View Contact Page'}
-                </Link>
               </div>
               <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
                 <div className="flex items-center mb-6">
@@ -909,6 +1475,20 @@ const Home = () => {
                     +91 82102 89314
                   </a>
                 </div>
+              </div>
+              <div className="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
+                <div className="flex items-center mb-6">
+                  <div className="bg-blue-100 p-3 rounded-full mr-4">
+                    <FiMapPin className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {language === 'hindi' ? 'सीतामढ़ी कार्यालय' : 'Sitamarhi Office'}
+                  </h3>
+                </div>
+                <p className="text-gray-700 text-lg mb-4 leading-relaxed">
+                  Kusamari Chauk Ram Babu Das Rega,<br />
+                  Sitamarhi-843327
+                </p>
               </div>
             </div>
             <div className="text-center mt-8">
@@ -982,49 +1562,6 @@ const Home = () => {
           >
             {t.nav.form}
           </Link>
-        </div>
-      </section>
-
-      {/* Internal Links Navigation Section for SEO */}
-      <section className="py-12 md:py-16 bg-white border-t border-gray-200">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-gray-900 text-center hindi-text">
-              {language === 'hindi' ? 'महत्वपूर्ण पृष्ठ' : 'Important Pages'}
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div>
-                <h3 className="text-lg font-semibold mb-4 text-gray-900">
-                  {language === 'hindi' ? 'जानकारी' : 'Information'}
-                </h3>
-                <ul className="space-y-2">
-                  <li><Link to="/about" className="text-primary-600 hover:underline">{language === 'hindi' ? 'हमारे बारे में' : 'About Us'}</Link></li>
-                  <li><Link to="/empowerment" className="text-primary-600 hover:underline">{language === 'hindi' ? 'महिला सशक्तिकरण' : 'Women Empowerment'}</Link></li>
-                  <li><Link to="/programs" className="text-primary-600 hover:underline">{language === 'hindi' ? 'कार्यक्रम' : 'Programs'}</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-4 text-gray-900">
-                  {language === 'hindi' ? 'सेवाएं' : 'Services'}
-                </h3>
-                <ul className="space-y-2">
-                  <li><Link to="/services" className="text-primary-600 hover:underline">{language === 'hindi' ? 'सभी सेवाएं' : 'All Services'}</Link></li>
-                  <li><Link to="/health" className="text-primary-600 hover:underline">{language === 'hindi' ? 'स्वास्थ्य कार्यक्रम' : 'Health Programs'}</Link></li>
-                  <li><Link to="/safety" className="text-primary-600 hover:underline">{language === 'hindi' ? 'महिला सुरक्षा' : 'Women Safety'}</Link></li>
-                  <li><Link to="/development" className="text-primary-600 hover:underline">{language === 'hindi' ? 'विकास कार्यक्रम' : 'Development Programs'}</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-4 text-gray-900">
-                  {language === 'hindi' ? 'संपर्क' : 'Contact'}
-                </h3>
-                <ul className="space-y-2">
-                  <li><Link to="/contact" className="text-primary-600 hover:underline">{language === 'hindi' ? 'संपर्क करें' : 'Contact Us'}</Link></li>
-                  <li><Link to="/form" className="text-primary-600 hover:underline">{language === 'hindi' ? 'पंजीकरण फॉर्म' : 'Registration Form'}</Link></li>
-                </ul>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
     </div>

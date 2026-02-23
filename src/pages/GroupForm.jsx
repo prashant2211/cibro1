@@ -98,7 +98,7 @@ const GroupForm = () => {
               <h3 className="text-2xl md:text-3xl font-bold mb-6 text-gray-900">
                 {language === 'hindi' ? 'फॉर्म जमा करने के लिए संपर्क करें' : 'Contact for Form Submission'}
               </h3>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white rounded-xl p-6 shadow-md">
                   <h4 className="font-semibold text-lg mb-3 text-gray-900">
                     {language === 'hindi' ? 'पटना कार्यालय' : 'Patna Office'}
@@ -123,6 +123,15 @@ const GroupForm = () => {
                   <a href="tel:+918210289314" className="text-primary-600 hover:text-primary-700 font-medium">
                     +91 82102 89314
                   </a>
+                </div>
+                <div className="bg-white rounded-xl p-6 shadow-md">
+                  <h4 className="font-semibold text-lg mb-3 text-gray-900">
+                    {language === 'hindi' ? 'सीतामढ़ी कार्यालय' : 'Sitamarhi Office'}
+                  </h4>
+                  <p className="text-gray-700 mb-3">
+                    Kusamari Chauk Ram Babu Das Rega,<br />
+                    Sitamarhi-843327
+                  </p>
                 </div>
               </div>
             </div>

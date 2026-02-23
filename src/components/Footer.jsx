@@ -109,10 +109,17 @@ const Footer = () => {
                   <p className="font-medium text-white mb-1">
                     {language === 'hindi' ? 'मुजफ्फरपुर कार्यालय' : 'Muzaffarpur Office'}
                   </p>
-                  <p>
+                  <p className="mb-3">
                     Maa Complex, Behind SBI,<br />
                     Bhagwanpur Chowk, Sri Rampuri,<br />
                     Muzaffarpur
+                  </p>
+                  <p className="font-medium text-white mb-1">
+                    {language === 'hindi' ? 'सीतामढ़ी कार्यालय' : 'Sitamarhi Office'}
+                  </p>
+                  <p>
+                    Kusamari Chauk Ram Babu Das Rega,<br />
+                    Sitamarhi-843327
                   </p>
                 </div>
               </div>
@@ -124,8 +131,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <FiMail className="h-5 w-5 text-primary-400" />
-                <a href="mailto:info@jjmbikashfoundation.com" className="text-gray-400 hover:text-white transition-colors text-sm">
-                  info@jjmbikashfoundation.com
+                <a href="mailto:info@jaagatjannimahilabikashfoundation.com" className="text-gray-400 hover:text-white transition-colors text-sm">
+                  info@jaagatjannimahilabikashfoundation.com
                 </a>
               </div>
             </div>

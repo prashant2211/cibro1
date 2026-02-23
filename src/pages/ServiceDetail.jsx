@@ -146,6 +146,9 @@ const ServiceDetail = () => {
                         </p>
                         <p>
                           {language === 'hindi' ? 'मुजफ्फरपुर कार्यालय' : 'Muzaffarpur Office'}:<br />
+                          Maa Complex, Behind SBI, Bhagwanpur Chowk, Sri Rampuri, Muzaffarpur<br />
+                          {language === 'hindi' ? 'सीतामढ़ी कार्यालय' : 'Sitamarhi Office'}:<br />
+                          Kusamari Chauk Ram Babu Das Rega, Sitamarhi-843327<br />
                           Maa Complex, Behind SBI, Bhagwanpur Chowk, Sri Rampuri, Muzaffarpur
                         </p>
                       </div>

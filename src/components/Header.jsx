@@ -105,6 +105,14 @@ const Header = () => {
               {t.nav.services}
             </Link>
             <Link 
+              to="/gallery" 
+              className={`px-2 py-1.5 text-sm rounded-md transition-colors whitespace-nowrap ${
+                isActive('/gallery') ? 'text-primary-600 font-semibold' : 'text-gray-700 hover:text-primary-600'
+              }`}
+            >
+              {t.nav.gallery}
+            </Link>
+            <Link 
               to="/contact" 
               className={`px-2 py-1.5 text-sm rounded-md transition-colors whitespace-nowrap ${
                 isActive('/contact') ? 'text-primary-600 font-semibold' : 'text-gray-700 hover:text-primary-600'
@@ -203,6 +211,15 @@ const Header = () => {
                 }`}
               >
                 {t.nav.services}
+              </Link>
+              <Link 
+                to="/gallery" 
+                onClick={() => setIsMenuOpen(false)}
+                className={`px-4 py-2 rounded-md ${
+                  isActive('/gallery') ? 'bg-primary-50 text-primary-600 font-semibold' : 'text-gray-700'
+                }`}
+              >
+                {t.nav.gallery}
               </Link>
               <Link 
                 to="/health" 

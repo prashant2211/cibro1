@@ -14,6 +14,7 @@ import Contact from './pages/Contact';
 import GroupForm from './pages/GroupForm';
 import Services from './pages/Services';
 import ServiceDetail from './pages/ServiceDetail';
+import Gallery from './pages/Gallery';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
               <Route path="/form" element={<GroupForm />} />
               <Route path="/services" element={<Services />} />
               <Route path="/services/:id" element={<ServiceDetail />} />
+              <Route path="/gallery" element={<Gallery />} />
             </Routes>
           </main>
           <Footer />
