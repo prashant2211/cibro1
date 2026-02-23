@@ -131,7 +131,6 @@ const ServiceDetail = () => {
                         +91 97088 77564
                       </a>
                     </div>
-                    </div>
                     <div className="flex items-start text-gray-700">
                       <FiMapPin className="h-5 w-5 mr-3 mt-1 text-primary-600 flex-shrink-0" />
                       <div>
@@ -139,12 +138,13 @@ const ServiceDetail = () => {
                           {language === 'hindi' ? 'पटना कार्यालय' : 'Patna Office'}:<br />
                           Ghurdaur Road, Digha Ashiana, Near SSB Camp, Patna-800011
                         </p>
-                        <p>
+                        <p className="mb-1">
                           {language === 'hindi' ? 'मुजफ्फरपुर कार्यालय' : 'Muzaffarpur Office'}:<br />
-                          Maa Complex, Behind SBI, Bhagwanpur Chowk, Sri Rampuri, Muzaffarpur<br />
-                          {language === 'hindi' ? 'सीतामढ़ी कार्यालय' : 'Sitamarhi Office'}:<br />
-                          Kusamari Chauk Ram Babu Das Rega, Sitamarhi-843327<br />
                           Maa Complex, Behind SBI, Bhagwanpur Chowk, Sri Rampuri, Muzaffarpur
+                        </p>
+                        <p>
+                          {language === 'hindi' ? 'सीतामढ़ी कार्यालय' : 'Sitamarhi Office'}:<br />
+                          Kusamari Chauk Ram Babu Das Rega, Sitamarhi-843327
                         </p>
                       </div>
                     </div>
