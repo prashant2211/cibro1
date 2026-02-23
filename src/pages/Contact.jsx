@@ -31,9 +31,9 @@ const Contact = () => {
   return (
     <>
       <SEO 
-        title="Contact Us - Jaagat Janni Mahila Bikash Foundation | Patna & Muzaffarpur"
-        description="Contact Jaagat Janni Mahila Bikash Foundation (Pragati Mahila Bikash Kendra) - Patna Office: Ghurdaur Road, Digha Ashiana, Near SSB Camp, Patna-800011. Muzaffarpur Office: Maa Complex, Behind SBI, Bhagwanpur Chowk, Sri Rampuri. Phone: +91 95258 68575, +91 82102 89314"
-        keywords="Pragati Mahila Vikas Foundation, Pragati Mahila Bikash Foundation, pragati mahila vikas foundation, pragati mahila bikash foundation, Pragati Mahila Vikas Foundation contact, Pragati Mahila Bikash Foundation contact, Pragati Mahila Vikas Foundation Patna, Pragati Mahila Bikash Foundation Patna, Pragati Mahila Vikas Kendra, Pragati Mahila Bikash Kendra, mahila bikash foundation, Mahila Bikash Foundation, mahila bikash foundation contact, mahila bikash foundation Patna, mahila bikash foundation Bihar, Jaagat Janni Mahila Bikash Foundation contact, Jagat Janni Mahila Bikash Foundation, Jagat Ganni Mahila Bikash Foundation, Jaagat Ganni Mahila Bikash Foundation, jagat ganni mahila bikash foundation, jagat janni mahila bikash foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Pragati Mahila Bikas Kendra, महिला विकास फाउंडेशन पटना, mahila vikas foundation, mahila bikas foundation, mahila Bikas foundation, Mahila Bikas Foundation, women foundation contact Patna, Muzaffarpur women NGO contact"
+        title="Contact Us - Mahila Vikash Foundation | Mahila Bikash Foundation | Patna, Muzaffarpur & Sitamarhi"
+        description="Contact Mahila Vikash Foundation / Mahila Bikash Foundation (also known as Jaagat Janni Mahila Bikash Foundation / Pragati Mahila Bikash Kendra) - Patna Office: Ghurdaur Road, Digha Ashiana, Near SSB Camp, Patna-800011. Muzaffarpur Office: Maa Complex, Behind SBI, Bhagwanpur Chowk, Sri Rampuri. Sitamarhi Office: Kusamari Chauk, Sitamarhi-843327. Phone: +91 97088 77564"
+        keywords="Mahila Vikash Foundation, Mahila Bikash Foundation, mahila vikash foundation, mahila bikash foundation, Mahila Vikash Foundation contact, Mahila Bikash Foundation contact, Mahila Vikash Foundation Patna, Mahila Bikash Foundation Patna, Mahila Vikash Foundation Bihar, Mahila Bikash Foundation Bihar, Pragati Mahila Vikas Foundation, Pragati Mahila Bikash Foundation, pragati mahila vikas foundation, pragati mahila bikash foundation, Pragati Mahila Vikas Foundation contact, Pragati Mahila Bikash Foundation contact, Pragati Mahila Vikas Foundation Patna, Pragati Mahila Bikash Foundation Patna, Pragati Mahila Vikas Kendra, Pragati Mahila Bikash Kendra, mahila bikash foundation, Mahila Bikash Foundation, mahila bikash foundation contact, mahila bikash foundation Patna, mahila bikash foundation Bihar, Jaagat Janni Mahila Bikash Foundation contact, Jagat Janni Mahila Bikash Foundation, Jagat Ganni Mahila Bikash Foundation, Jaagat Ganni Mahila Bikash Foundation, jagat ganni mahila bikash foundation, jagat janni mahila bikash foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Pragati Mahila Bikas Kendra, महिला विकास फाउंडेशन पटना, mahila vikas foundation, mahila bikas foundation, mahila Bikas foundation, Mahila Bikas Foundation, women foundation contact Patna, Muzaffarpur women NGO contact, Sitamarhi women NGO contact"
       />
     <div className="pt-20">
       {/* Hero Image Section */}
@@ -122,8 +122,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-xl mb-2 text-gray-900">{t.contact.phone}</h3>
-                    <a href="tel:+919876543210" className="text-gray-700 text-lg hover:text-primary-600 transition-colors">
-                      +91 9525868575
+                    <a href="tel:+919708877564" className="text-gray-700 text-lg hover:text-primary-600 transition-colors">
+                      +91 97088 77564
                     </a>
                   </div>
                 </div>

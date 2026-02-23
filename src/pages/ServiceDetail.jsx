@@ -127,15 +127,10 @@ const ServiceDetail = () => {
                   <div className="space-y-3">
                     <div className="flex items-center text-gray-700">
                       <FiPhone className="h-5 w-5 mr-3 text-primary-600" />
-                      <a href="tel:+919525868575" className="hover:text-primary-600 transition-colors">
-                        +91 95258 68575
+                      <a href="tel:+919708877564" className="hover:text-primary-600 transition-colors">
+                        +91 97088 77564
                       </a>
                     </div>
-                    <div className="flex items-center text-gray-700">
-                      <FiPhone className="h-5 w-5 mr-3 text-primary-600" />
-                      <a href="tel:+918210289314" className="hover:text-primary-600 transition-colors">
-                        +91 82102 89314
-                      </a>
                     </div>
                     <div className="flex items-start text-gray-700">
                       <FiMapPin className="h-5 w-5 mr-3 mt-1 text-primary-600 flex-shrink-0" />

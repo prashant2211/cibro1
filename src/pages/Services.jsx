@@ -11,9 +11,9 @@ const Services = () => {
   return (
     <>
       <SEO 
-        title="Services"
-        description="Jaagat Janni Mahila Bikash Foundation - Self-Help Group Services, Loans, Training Programs"
-        keywords="Pragati Mahila Vikas Foundation, Pragati Mahila Bikash Foundation, pragati mahila vikas foundation, pragati mahila bikash foundation, Pragati Mahila Vikas Foundation Patna, Pragati Mahila Bikash Foundation Patna, Pragati Mahila Vikas Kendra, Pragati Mahila Bikash Kendra, mahila bikash foundation, Mahila Bikash Foundation, mahila bikash foundation Patna, self-help group, SHG, loan schemes, women empowerment, savings scheme, training programs, Jaagat Janni Mahila Bikash Foundation, Jagat Janni Mahila Bikash Foundation, Jagat Ganni Mahila Bikash Foundation, Jaagat Ganni Mahila Bikash Foundation, jagat ganni mahila bikash foundation, jagat janni mahila bikash foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Mahila Bikas Foundation, mahila Bikas foundation, mahila bikas foundation"
+        title="Services - Mahila Vikash Foundation | Mahila Bikash Foundation | Self-Help Group Services"
+        description="Mahila Vikash Foundation / Mahila Bikash Foundation - Self-Help Group Services, Loans, Savings Schemes, Training Programs for Women Empowerment in Patna, Muzaffarpur and Sitamarhi, Bihar"
+        keywords="Mahila Vikash Foundation, Mahila Bikash Foundation, mahila vikash foundation, mahila bikash foundation, Mahila Vikash Foundation services, Mahila Bikash Foundation services, Mahila Vikash Foundation Patna, Mahila Bikash Foundation Patna, Mahila Vikash Foundation Bihar, Mahila Bikash Foundation Bihar, Pragati Mahila Vikas Foundation, Pragati Mahila Bikash Foundation, pragati mahila vikas foundation, pragati mahila bikash foundation, Pragati Mahila Vikas Foundation Patna, Pragati Mahila Bikash Foundation Patna, Pragati Mahila Vikas Kendra, Pragati Mahila Bikash Kendra, mahila bikash foundation, Mahila Bikash Foundation, mahila bikash foundation Patna, self-help group, SHG, loan schemes, women empowerment, savings scheme, training programs, Jaagat Janni Mahila Bikash Foundation, Jagat Janni Mahila Bikash Foundation, Jagat Ganni Mahila Bikash Foundation, Jaagat Ganni Mahila Bikash Foundation, jagat ganni mahila bikash foundation, jagat janni mahila bikash foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Mahila Bikas Foundation, mahila Bikas foundation, mahila bikas foundation"
       />
       <div className="pt-20">
         {/* Hero Section */}

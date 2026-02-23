@@ -107,8 +107,8 @@ const GroupForm = () => {
                     Ghurdaur Road, Digha Ashiana,<br />
                     Near SSB Camp, Patna-800011
                   </p>
-                  <a href="tel:+919525868575" className="text-primary-600 hover:text-primary-700 font-medium">
-                    +91 95258 68575
+                  <a href="tel:+919708877564" className="text-primary-600 hover:text-primary-700 font-medium">
+                    +91 97088 77564
                   </a>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-md">
@@ -120,8 +120,8 @@ const GroupForm = () => {
                     Bhagwanpur Chowk, Sri Rampuri,<br />
                     Muzaffarpur
                   </p>
-                  <a href="tel:+918210289314" className="text-primary-600 hover:text-primary-700 font-medium">
-                    +91 82102 89314
+                  <a href="tel:+919708877564" className="text-primary-600 hover:text-primary-700 font-medium">
+                    +91 97088 77564
                   </a>
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-md">
@@ -132,6 +132,9 @@ const GroupForm = () => {
                     Kusamari Chauk Ram Babu Das Rega,<br />
                     Sitamarhi-843327
                   </p>
+                  <a href="tel:+919708877564" className="text-primary-600 hover:text-primary-700 font-medium">
+                    +91 97088 77564
+                  </a>
                 </div>
               </div>
             </div>

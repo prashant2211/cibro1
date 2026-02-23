@@ -307,9 +307,9 @@ const Home = () => {
   return (
     <>
       <SEO 
-        title="Pragati Mahila Vikas Foundation | Pragati Mahila Bikash Foundation | Pragati Mahila Vikas Kendra | Pragati Mahila Bikash Kendra - Women Empowerment Patna"
-        description="Pragati Mahila Vikas Foundation / Pragati Mahila Bikash Foundation (Pragati Mahila Vikas Kendra / Pragati Mahila Bikash Kendra / Jaagat Janni Mahila Bikash Foundation) - Self-help group services, loans, savings schemes, training programs for women empowerment in Patna and Muzaffarpur, Bihar. Contact: +91 95258 68575, +91 82102 89314"
-        keywords="Pragati Mahila Vikas Foundation, Pragati Mahila Bikash Foundation, pragati mahila vikas foundation, pragati mahila bikash foundation, Pragati Mahila Vikas Foundation Patna, Pragati Mahila Bikash Foundation Patna, Pragati Mahila Vikas Kendra, Pragati Mahila Bikash Kendra, mahila bikash foundation, Mahila Bikash Foundation, mahila bikash foundation Patna, mahila bikash foundation Bihar, Jaagat Janni Mahila Bikash Foundation, Jagat Janni Mahila Bikash Foundation, Jagat Ganni Mahila Bikash Foundation, Jaagat Ganni Mahila Bikash Foundation, jagat ganni mahila bikash foundation, jagat janni mahila bikash foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Pragati Mahila Bikas Kendra, महिला विकास फाउंडेशन, महिला विकास फाउंडेशन पटना, mahila vikas foundation, mahila bikas foundation, mahila Bikas foundation, Mahila Bikas Foundation, mahila vikas foundation Patna, mahila bikas foundation Patna, mahila Bikas foundation Patna, self-help group Patna, women empowerment Bihar, स्वयं सहायता समूह, बचत योजना, ऋण योजना, महिला सशक्तिकरण पटना, Muzaffarpur women foundation"
+        title="Mahila Vikash Foundation | Mahila Bikash Foundation | Pragati Mahila Vikas Foundation | Pragati Mahila Bikash Foundation - Women Empowerment Patna"
+        description="Mahila Vikash Foundation / Mahila Bikash Foundation (also known as Pragati Mahila Vikas Foundation / Pragati Mahila Bikash Foundation / Pragati Mahila Vikas Kendra / Pragati Mahila Bikash Kendra / Jaagat Janni Mahila Bikash Foundation) - Self-help group services, loans, savings schemes, training programs for women empowerment in Patna, Muzaffarpur and Sitamarhi, Bihar. Contact: +91 97088 77564"
+        keywords="Mahila Vikash Foundation, Mahila Bikash Foundation, mahila vikash foundation, mahila bikash foundation, Mahila Vikash Foundation Patna, Mahila Bikash Foundation Patna, Mahila Vikash Foundation Bihar, Mahila Bikash Foundation Bihar, Pragati Mahila Vikas Foundation, Pragati Mahila Bikash Foundation, pragati mahila vikas foundation, pragati mahila bikash foundation, Pragati Mahila Vikas Foundation Patna, Pragati Mahila Bikash Foundation Patna, Pragati Mahila Vikas Kendra, Pragati Mahila Bikash Kendra, mahila bikash foundation, Mahila Bikash Foundation, mahila bikash foundation Patna, mahila bikash foundation Bihar, Jaagat Janni Mahila Bikash Foundation, Jagat Janni Mahila Bikash Foundation, Jagat Ganni Mahila Bikash Foundation, Jaagat Ganni Mahila Bikash Foundation, jagat ganni mahila bikash foundation, jagat janni mahila bikash foundation, Jaagat Janni Mahila Vikas Foundation, Jaagat Janni Mahila Bikas Foundation, Pragati Mahila Bikas Kendra, महिला विकास फाउंडेशन, महिला विकास फाउंडेशन पटना, mahila vikas foundation, mahila bikas foundation, mahila Bikas foundation, Mahila Bikas Foundation, mahila vikas foundation Patna, mahila bikas foundation Patna, mahila Bikas foundation Patna, self-help group Patna, women empowerment Bihar, स्वयं सहायता समूह, बचत योजना, ऋण योजना, महिला सशक्तिकरण पटना, Muzaffarpur women foundation, Sitamarhi women foundation"
       />
       <div className="pt-20">
       {/* Hero Image Section */}
@@ -329,10 +329,14 @@ const Home = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto text-center fade-in">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white hindi-text">
-                  {language === 'hindi' ? 'जागत जननी महिला विकास फाउंडेशन' : 'Jaagat Janni Mahila Bikash Foundation'}
+                  {language === 'hindi' 
+                    ? 'जागत जननी महिला बिकास फाउंडेशन - महिला सशक्तिकरण और स्वयं सहायता समूह सेवाएं'
+                    : 'Jaagat Janni Mahila Bikash Foundation - Women Empowerment & Self-Help Group Services'}
                 </h1>
-                <p className="text-xl md:text-2xl mb-2 text-white/90">
-                  Pragati Mahila Bikash Kendra
+                <p className="text-xl md:text-2xl mb-2 text-white/90 font-semibold">
+                  {language === 'hindi' 
+                    ? 'महिला विकास फाउंडेशन / महिला बिकास फाउंडेशन - जागत जननी महिला बिकास फाउंडेशन - प्रगति महिला विकास केंद्र'
+                    : 'Mahila Vikash Foundation / Mahila Bikash Foundation - Jaagat Janni Mahila Bikash Foundation - Pragati Mahila Bikash Kendra'}
                 </p>
                 <p className="text-lg md:text-xl mb-8 text-white/90">
                   {t.home.heroDescription}
@@ -437,7 +441,7 @@ const Home = () => {
                   <FiTrendingUp className="h-8 w-8 text-secondary-600" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
-                  {t.home.ourVision}
+                  {language === 'hindi' ? 'हमारी दृष्टि - महिला विकास' : 'Our Vision - Women Development'}
                 </h2>
               </div>
               <p className="text-gray-600 text-lg leading-relaxed">
@@ -1144,14 +1148,10 @@ const Home = () => {
                     ? 'सुरक्षा और घरेलू सेवाओं के लिए, कृपया हमारे कार्यालय में संपर्क करें या फोन करें।'
                     : 'For security and household services, please contact our office or call us.'}
                 </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
-                  <a href="tel:+919525868575" className="flex items-center text-primary-600 font-semibold hover:text-primary-700">
+                <div className="flex items-center justify-center mt-4">
+                  <a href="tel:+919708877564" className="flex items-center text-primary-600 font-semibold hover:text-primary-700">
                     <FiPhone className="mr-2" />
-                    +91 95258 68575
-                  </a>
-                  <a href="tel:+918210289314" className="flex items-center text-primary-600 font-semibold hover:text-primary-700">
-                    <FiPhone className="mr-2" />
-                    +91 82102 89314
+                    +91 97088 77564
                   </a>
                 </div>
               </div>
@@ -1450,8 +1450,8 @@ const Home = () => {
                 </p>
                 <div className="flex items-center text-gray-700 mb-2">
                   <FiPhone className="h-5 w-5 mr-3 text-primary-600" />
-                  <a href="tel:+919525868575" className="hover:text-primary-600 transition-colors">
-                    +91 95258 68575
+                  <a href="tel:+919708877564" className="hover:text-primary-600 transition-colors">
+                    +91 97088 77564
                   </a>
                 </div>
               </div>
@@ -1471,8 +1471,8 @@ const Home = () => {
                 </p>
                 <div className="flex items-center text-gray-700 mb-2">
                   <FiPhone className="h-5 w-5 mr-3 text-green-600" />
-                  <a href="tel:+918210289314" className="hover:text-green-600 transition-colors">
-                    +91 82102 89314
+                  <a href="tel:+919708877564" className="hover:text-green-600 transition-colors">
+                    +91 97088 77564
                   </a>
                 </div>
               </div>
