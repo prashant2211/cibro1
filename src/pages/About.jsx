@@ -157,7 +157,7 @@ const About = () => {
                 <div className="space-y-4">
                   <div>
                     <p className="text-gray-700 text-lg font-medium mb-1">
-                      {language === 'hindi' ? 'पटना कार्यालय' : 'Patna Office'}
+                      {language === 'hindi' ? 'मुख्य कार्यालय (पटना)' : 'Head Office (Patna)'}
                     </p>
                     <p className="text-gray-700 text-lg">
                       Ghurdaur Road, Digha Ashiana,<br />

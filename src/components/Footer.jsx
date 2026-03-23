@@ -31,6 +31,20 @@ const Footer = () => {
                 : 'Dedicated to women\'s health, safety, development and empowerment'}
             </p>
             <p className="text-sm text-gray-500">Pragati Mahila Bikash Kendra</p>
+            <div className="mt-4 p-3 rounded-md bg-gray-800/70 border border-gray-700">
+              <p className="text-xs text-gray-400 uppercase tracking-wide">
+                {language === 'hindi' ? 'कॉरपोरेट पहचान संख्या (CIN)' : 'Corporate Identification Number (CIN)'}
+              </p>
+              <p className="text-sm text-white font-medium break-all">
+                U88900BR2026NPL083601
+              </p>
+              <p className="text-xs text-gray-400 uppercase tracking-wide mt-3">
+                {language === 'hindi' ? 'लाइसेंस नंबर' : 'Licence Number'}
+              </p>
+              <p className="text-sm text-white font-medium">
+                182262
+              </p>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -100,7 +114,7 @@ const Footer = () => {
                 <FiMapPin className="h-5 w-5 mt-1 text-primary-400 flex-shrink-0" />
                 <div className="text-gray-400 text-sm">
                   <p className="font-medium text-white mb-1">
-                    {language === 'hindi' ? 'पटना कार्यालय' : 'Patna Office'}
+                    {language === 'hindi' ? 'मुख्य कार्यालय (पटना)' : 'Head Office (Patna)'}
                   </p>
                   <p className="mb-3">
                     Ghurdaur Road, Digha Ashiana,<br />

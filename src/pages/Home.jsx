@@ -1441,7 +1441,7 @@ const Home = () => {
                     <FiMapPin className="h-6 w-6 text-primary-600" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900">
-                    {language === 'hindi' ? 'पटना कार्यालय' : 'Patna Office'}
+                    {language === 'hindi' ? 'मुख्य कार्यालय (पटना)' : 'Head Office (Patna)'}
                   </h3>
                 </div>
                 <p className="text-gray-700 text-lg mb-4 leading-relaxed">

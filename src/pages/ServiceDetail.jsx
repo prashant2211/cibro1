@@ -135,7 +135,7 @@ const ServiceDetail = () => {
                       <FiMapPin className="h-5 w-5 mr-3 mt-1 text-primary-600 flex-shrink-0" />
                       <div>
                         <p className="mb-1">
-                          {language === 'hindi' ? 'पटना कार्यालय' : 'Patna Office'}:<br />
+                          {language === 'hindi' ? 'मुख्य कार्यालय (पटना)' : 'Head Office (Patna)'}:<br />
                           Ghurdaur Road, Digha Ashiana, Near SSB Camp, Patna-800011
                         </p>
                         <p className="mb-1">

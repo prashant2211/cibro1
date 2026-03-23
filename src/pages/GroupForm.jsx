@@ -101,7 +101,7 @@ const GroupForm = () => {
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white rounded-xl p-6 shadow-md">
                   <h4 className="font-semibold text-lg mb-3 text-gray-900">
-                    {language === 'hindi' ? 'पटना कार्यालय' : 'Patna Office'}
+                    {language === 'hindi' ? 'मुख्य कार्यालय (पटना)' : 'Head Office (Patna)'}
                   </h4>
                   <p className="text-gray-700 mb-3">
                     Ghurdaur Road, Digha Ashiana,<br />
