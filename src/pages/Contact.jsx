@@ -122,9 +122,26 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-xl mb-2 text-gray-900">{t.contact.phone}</h3>
-                    <a href="tel:+919708877564" className="text-gray-700 text-lg hover:text-primary-600 transition-colors">
-                      +91 97088 77564
-                    </a>
+                    <div className="space-y-2 text-gray-700 text-lg">
+                      <div>
+                        <span className="font-medium">{language === 'hindi' ? 'पटना कार्यालय: ' : 'Patna Office: '}</span>
+                        <a href="tel:+919525868575" className="hover:text-primary-600 transition-colors">
+                          +91 9525868575
+                        </a>
+                      </div>
+                      <div>
+                        <span className="font-medium">{language === 'hindi' ? 'मुजफ्फरपुर कार्यालय: ' : 'Muzaffarpur Office: '}</span>
+                        <a href="tel:+919117373511" className="hover:text-primary-600 transition-colors">
+                          +91 9117373511
+                        </a>
+                      </div>
+                      <div>
+                        <span className="font-medium">{language === 'hindi' ? 'सीतामढ़ी कार्यालय: ' : 'Sitamarhi Office: '}</span>
+                        <a href="tel:+919708877564" className="hover:text-primary-600 transition-colors">
+                          +91 9708877564
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">

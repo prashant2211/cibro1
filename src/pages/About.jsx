@@ -163,6 +163,11 @@ const About = () => {
                       Ghurdaur Road, Digha Ashiana,<br />
                       Near SSB Camp, Patna-800011
                     </p>
+                    <p className="text-gray-700 text-lg">
+                      <a href="tel:+919525868575" className="hover:text-primary-600 transition-colors">
+                        +91 9525868575
+                      </a>
+                    </p>
                   </div>
                   <div>
                     <p className="text-gray-700 text-lg font-medium mb-1">
@@ -173,6 +178,11 @@ const About = () => {
                       Bhagwanpur Chowk, Sri Rampuri,<br />
                       Muzaffarpur
                     </p>
+                    <p className="text-gray-700 text-lg">
+                      <a href="tel:+919117373511" className="hover:text-primary-600 transition-colors">
+                        +91 9117373511
+                      </a>
+                    </p>
                   </div>
                   <div>
                     <p className="text-gray-700 text-lg font-medium mb-1">
@@ -181,6 +191,11 @@ const About = () => {
                     <p className="text-gray-700 text-lg">
                       Kusamari Chauk Ram Babu Das Rega,<br />
                       Sitamarhi-843327
+                    </p>
+                    <p className="text-gray-700 text-lg">
+                      <a href="tel:+919708877564" className="hover:text-primary-600 transition-colors">
+                        +91 9708877564
+                      </a>
                     </p>
                   </div>
                 </div>

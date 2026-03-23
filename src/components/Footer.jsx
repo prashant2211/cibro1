@@ -106,6 +106,11 @@ const Footer = () => {
                     Ghurdaur Road, Digha Ashiana,<br />
                     Near SSB Camp, Patna-800011
                   </p>
+                  <p className="mb-3">
+                    <a href="tel:+919525868575" className="hover:text-white transition-colors">
+                      +91 9525868575
+                    </a>
+                  </p>
                   <p className="font-medium text-white mb-1">
                     {language === 'hindi' ? 'मुजफ्फरपुर कार्यालय' : 'Muzaffarpur Office'}
                   </p>
@@ -114,6 +119,11 @@ const Footer = () => {
                     Bhagwanpur Chowk, Sri Rampuri,<br />
                     Muzaffarpur
                   </p>
+                  <p className="mb-3">
+                    <a href="tel:+919117373511" className="hover:text-white transition-colors">
+                      +91 9117373511
+                    </a>
+                  </p>
                   <p className="font-medium text-white mb-1">
                     {language === 'hindi' ? 'सीतामढ़ी कार्यालय' : 'Sitamarhi Office'}
                   </p>
@@ -121,13 +131,16 @@ const Footer = () => {
                     Kusamari Chauk Ram Babu Das Rega,<br />
                     Sitamarhi-843327
                   </p>
+                  <p className="mt-1">
+                    <a href="tel:+919708877564" className="hover:text-white transition-colors">
+                      +91 9708877564
+                    </a>
+                  </p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <FiPhone className="h-5 w-5 text-primary-400" />
-                <a href="tel:+919708877564" className="text-gray-400 hover:text-white transition-colors">
-                  +91 97088 77564
-                </a>
+                <span className="text-gray-400">{language === 'hindi' ? 'कार्यालय नंबर ऊपर दिए गए हैं' : 'Office numbers are listed above'}</span>
               </div>
               <div className="flex items-center space-x-3">
                 <FiMail className="h-5 w-5 text-primary-400" />

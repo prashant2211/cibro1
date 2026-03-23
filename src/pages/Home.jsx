@@ -1149,9 +1149,9 @@ const Home = () => {
                     : 'For security and household services, please contact our office or call us.'}
                 </p>
                 <div className="flex items-center justify-center mt-4">
-                  <a href="tel:+919708877564" className="flex items-center text-primary-600 font-semibold hover:text-primary-700">
+                  <a href="tel:+919525868575" className="flex items-center text-primary-600 font-semibold hover:text-primary-700">
                     <FiPhone className="mr-2" />
-                    +91 97088 77564
+                    +91 9525868575
                   </a>
                 </div>
               </div>
@@ -1450,8 +1450,8 @@ const Home = () => {
                 </p>
                 <div className="flex items-center text-gray-700 mb-2">
                   <FiPhone className="h-5 w-5 mr-3 text-primary-600" />
-                  <a href="tel:+919708877564" className="hover:text-primary-600 transition-colors">
-                    +91 97088 77564
+                  <a href="tel:+919525868575" className="hover:text-primary-600 transition-colors">
+                    +91 9525868575
                   </a>
                 </div>
               </div>
@@ -1471,8 +1471,8 @@ const Home = () => {
                 </p>
                 <div className="flex items-center text-gray-700 mb-2">
                   <FiPhone className="h-5 w-5 mr-3 text-green-600" />
-                  <a href="tel:+919708877564" className="hover:text-green-600 transition-colors">
-                    +91 97088 77564
+                  <a href="tel:+919117373511" className="hover:text-green-600 transition-colors">
+                    +91 9117373511
                   </a>
                 </div>
               </div>
@@ -1489,6 +1489,12 @@ const Home = () => {
                   Kusamari Chauk Ram Babu Das Rega,<br />
                   Sitamarhi-843327
                 </p>
+                <div className="flex items-center text-gray-700 mb-2">
+                  <FiPhone className="h-5 w-5 mr-3 text-blue-600" />
+                  <a href="tel:+919708877564" className="hover:text-blue-600 transition-colors">
+                    +91 9708877564
+                  </a>
+                </div>
               </div>
             </div>
             <div className="text-center mt-8">
